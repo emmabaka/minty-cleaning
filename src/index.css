@@ -38,4 +38,11 @@ a {
 .container {
   padding-right: 30px;
   padding-left: 30px;
+  margin: 0 auto;
+}
+@media (min-width: 1340px) {
+  .container {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
 }
