@@ -4,9 +4,9 @@ const FeedbackForm = () => {
   return (
     <section className={css.feedback}>
       <div className={`${css.feedbackContainer} container`}>
-        <h1 className={css.title}>
+        <h2 className={css.title}>
           Консультація? <span className="accent">Звісно!</span>
-        </h1>
+        </h2>
         <form className={css.form} method="post" action="/send-mail">
           <select className={css.select} name="service" id="service-select">
             <option value="0" disabled selected>
