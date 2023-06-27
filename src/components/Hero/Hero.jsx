@@ -10,7 +10,7 @@ const Hero = () => {
       <div className={`${css.heroWrap} container`}>
         <h1 className={css.title}>
           Відпустіть турботи,{" "}
-          <span className={css.accent}>довірте прибирання професіоналам!</span>
+          <span className="accent">довірте прибирання професіоналам!</span>
         </h1>
         <img
           className={css.img}
