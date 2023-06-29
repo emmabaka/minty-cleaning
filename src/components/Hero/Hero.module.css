@@ -17,7 +17,7 @@
 }
 @media (min-width: 1340px) {
   .hero {
-    height: 90vh;
+    height: 100vh;
   }
   .heroWrap {
     display: flex;

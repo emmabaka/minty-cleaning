@@ -8,8 +8,13 @@ const FeedbackForm = () => {
           Консультація? <span className="accent">Звісно!</span>
         </h2>
         <form className={css.form} method="post" action="/send-mail">
-          <select className={css.select} name="service" id="service-select">
-            <option value="0" disabled selected>
+          <select
+            className={css.select}
+            name="service"
+            defaultValue={"Default"}
+            id="service-select"
+          >
+            <option value="Default" disabled>
               Обрати послугу
             </option>
             <option value="1">1</option>

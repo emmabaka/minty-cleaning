@@ -1,0 +1,154 @@
+.services {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+.services::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -60%;
+  width: 220%;
+  height: 100%;
+  z-index: -1;
+  border-top-left-radius: 49%;
+  border-top-right-radius: 49%;
+  background-color: #407bff;
+}
+.title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.tableWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.table {
+  position: relative;
+  min-width: 335px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+.general::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 63px;
+  height: 151px;
+  background-image: url("../../assets/service-man.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.regular::after {
+  content: "";
+  position: absolute;
+  top: -68px;
+  right: -30px;
+  width: 57px;
+  height: 191px;
+  background-image: url("../../assets/regular-clean-woman.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.office::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -30px;
+  width: 54px;
+  height: 105px;
+  background-image: url("../../assets/office-clean-woman.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.repair::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  width: 56px;
+  height: 139px;
+  background-image: url("../../assets/repair-clean-woman.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tableItem:nth-child(odd) {
+  background-color: #ecf0f8;
+}
+.tableItem:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.office .tableItem:nth-child(odd) {
+  background-color: #fff;
+}
+.office .tableItem:nth-child(even) {
+  background-color: #ecf0f8;
+}
+.tableTitle {
+  color: #407bff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.tableItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.serviceName {
+  color: #263238;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+}
+.servicePrice {
+  color: #263238;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 390px) {
+  .table {
+    min-width: 320px;
+  }
+}
+@media (min-width: 1340px) {
+  .services {
+    padding-top: 65px;
+    padding-bottom: 60px;
+  }
+  .title {
+    font-size: 32px;
+    line-height: 18px;
+    padding-bottom: 60px;
+  }
+  .tableWrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .table {
+    max-width: 505px;
+  }
+  .services::after {
+    right: -30%;
+    width: 160%;
+  }
+}

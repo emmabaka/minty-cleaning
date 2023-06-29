@@ -4,6 +4,7 @@ import Advantages from "./components/Advantages/Advantages";
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
+import Services from "./components/Services/Services";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <FeedbackForm />
       <About />
       <Advantages />
+      <Services />
     </>
   );
 }
