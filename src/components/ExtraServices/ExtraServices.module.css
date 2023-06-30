@@ -1,0 +1,96 @@
+.extraServices {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+.wrap {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding-bottom: 45px;
+}
+.dialogWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  justify-content: flex-end;
+}
+.womanImg {
+  width: 134px;
+  height: 211px;
+}
+.text {
+  position: relative;
+  max-width: 141px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 18px;
+}
+.text::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 228px;
+  height: 128px;
+  z-index: -1;
+  margin-top: 10px;
+  background-image: url("../../assets/extra-services-bubble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.boldText {
+  font-weight: 600;
+}
+.line {
+  margin-bottom: 20px;
+}
+.title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  background-color: #407bff;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 13px;
+  margin-bottom: 1px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.table:last-child .tableItem:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.tableTitle {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: #407bff;
+}
+.tableItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.tableItem:nth-child(odd) {
+  background-color: #ecf0f8;
+}
+.serviceName,
+.servicePrice {
+  color: #263238;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+}
+.hint {
+  color: #737a7e;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  padding-top: 15px;
+}
