@@ -1,4 +1,4 @@
-import hero from "../../assets/hero.png";
+import hero from "../../assets/heroMobile.png";
 import heroDesktop from "../../assets/hero1x.png";
 import heroMonitor from "../../assets/hero2x.png";
 import { useMediaQuery } from "@uidotdev/usehooks";
