@@ -105,3 +105,12 @@ header {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
+@media (min-width: 1340px) {
+  .logo {
+    font-size: 20px;
+  }
+  .logoWrap img {
+    width: 64px;
+    height: 50px;
+  }
+}

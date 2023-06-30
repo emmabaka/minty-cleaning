@@ -1,5 +1,5 @@
 import css from "./FeedbackForm.module.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const FeedbackForm = () => {
   return (
     <section className={css.feedback}>
@@ -7,7 +7,7 @@ const FeedbackForm = () => {
         <h2 className={css.title}>
           Консультація? <span className="accent">Звісно!</span>
         </h2>
-        <form className={css.form} method="post" action="/send-mail">
+        <form className={css.form} method="post" action={`${API_URL}/send-mail`}>
           <select
             className={css.select}
             name="service"
