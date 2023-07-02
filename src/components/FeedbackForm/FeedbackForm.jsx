@@ -1,13 +1,17 @@
 import css from "./FeedbackForm.module.css";
+import FeedbackTitle from "./FeedbackTitle";
 const API_URL = import.meta.env.VITE_API_URL;
-const FeedbackForm = () => {
+import PropTypes from 'prop-types';
+const FeedbackForm = ({ title, accent }) => {
   return (
     <section className={css.feedback}>
       <div className={`${css.feedbackContainer} container`}>
-        <h2 className={css.title}>
-          Консультація? <span className="accent">Звісно!</span>
-        </h2>
-        <form className={css.form} method="post" action={`${API_URL}/send-mail`}>
+        <FeedbackTitle title={title} accent={accent} />
+        <form
+          className={css.form}
+          method="post"
+          action={`${API_URL}/send-mail`}
+        >
           <select
             className={css.select}
             name="service"
@@ -42,5 +46,10 @@ const FeedbackForm = () => {
     </section>
   );
 };
+
+FeedbackForm.propTypes ={
+  title: PropTypes.array.isRequired,
+  accent: PropTypes.string.isRequired
+}
 
 export default FeedbackForm;

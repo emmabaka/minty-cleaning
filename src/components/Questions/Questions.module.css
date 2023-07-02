@@ -1,0 +1,216 @@
+.questions {
+  padding-top: 45px;
+  padding-bottom: 25px;
+}
+.title {
+  color: #407bff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.dialogWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.dialogItem1,
+.dialogItem2,
+.dialogItem3,
+.dialogItem4,
+.dialogItem5 {
+  position: relative;
+  color: #263238;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 15px;
+  background-color: #ecf0f8;
+  border-radius: 10px;
+}
+.dialogItem1:after,
+.dialogItem2:after,
+.dialogItem3:after,
+.dialogItem4:after,
+.dialogItem5:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -18px;
+  z-index: -1;
+  background-image: url("../../assets/chat-gray.svg");
+  width: 36px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.dialogItem1 {
+  max-width: 240px;
+}
+.dialogItem2 {
+  padding-left: 10px;
+  max-width: 256px;
+}
+.dialogItem3 {
+  max-width: 195px;
+}
+.dialogItem4 {
+  max-width: 211px;
+}
+.dialogItem5 {
+  max-width: 227px;
+}
+
+.dialogItemAccent1,
+.dialogItemAccent2,
+.dialogItemAccent3,
+.dialogItemAccent4,
+.dialogItemAccent5 {
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #407bff;
+}
+.dialogItemAccent1:after,
+.dialogItemAccent2:after,
+.dialogItemAccent3:after,
+.dialogItemAccent4:after,
+.dialogItemAccent5:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  z-index: -1;
+  background-image: url("../../assets/chat-blue.svg");
+  width: 36px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.dialogItemAccent1 {
+  align-self: flex-end;
+  max-width: 284px;
+}
+.dialogItemAccent2 {
+  align-self: flex-end;
+  max-width: 265px;
+}
+.dialogItemAccent3 {
+  align-self: flex-end;
+  max-width: 210px;
+}
+.dialogItemAccent4 {
+  align-self: flex-end;
+  max-width: 283px;
+}
+.dialogItemAccent5 {
+  align-self: flex-end;
+  max-width: 279px;
+}
+@media (min-width: 1340px) {
+  .questions {
+    position: relative;
+    padding-bottom: 80px;
+  }
+  .questions::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: -30px;
+    background-image: url("../../assets/general-desktop.svg");
+    width: 120px;
+    height: 280px;
+    transform: rotate(14.5deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .title {
+    font-size: 32px;
+    line-height: 18px;
+    padding-bottom: 65px;
+  }
+  .wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .dialogWrap {
+    width: 65%;
+  }
+  .dialogItem1,
+  .dialogItem2,
+  .dialogItem3,
+  .dialogItem4,
+  .dialogItem5 {
+    font-size: 18px;
+    line-height: normal;
+    padding: 20px;
+  }
+  .dialogItem1:after,
+  .dialogItem2:after,
+  .dialogItem3:after,
+  .dialogItem4:after,
+  .dialogItem5:after {
+    bottom: 0;
+    left: -18px;
+    width: 38px;
+    height: 15px;
+  }
+  .dialogItem1 {
+    max-width: 299px;
+  }
+  .dialogItem2 {
+    max-width: 331px;
+  }
+  .dialogItem3 {
+    max-width: 256px;
+  }
+  .dialogItem4 {
+    max-width: 272px;
+  }
+  .dialogItem5 {
+    max-width: 300px;
+  }
+
+  .dialogItemAccent1,
+  .dialogItemAccent2,
+  .dialogItemAccent3,
+  .dialogItemAccent4,
+  .dialogItemAccent5 {
+    font-size: 18px;
+    line-height: normal;
+  }
+  .dialogItemAccent1:after,
+  .dialogItemAccent2:after,
+  .dialogItemAccent3:after,
+  .dialogItemAccent4:after,
+  .dialogItemAccent5:after {
+    bottom: 0;
+    right: -15px;
+    width: 38px;
+    height: 15px;
+  }
+  .dialogItemAccent1 {
+    align-self: flex-end;
+    max-width: 408px;
+  }
+  .dialogItemAccent2 {
+    align-self: flex-end;
+    max-width: 304px;
+  }
+  .dialogItemAccent3 {
+    align-self: flex-end;
+    max-width: 399px;
+  }
+  .dialogItemAccent4 {
+    align-self: flex-end;
+    max-width: 405px;
+  }
+  .dialogItemAccent5 {
+    align-self: flex-end;
+    max-width: 430px;
+  }
+}
