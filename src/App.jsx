@@ -1,6 +1,7 @@
 import "./App.css";
 import About from "./components/About/About";
 import Advantages from "./components/Advantages/Advantages";
+import Equipment from "./components/Equipment/Equipment";
 import ExtraServices from "./components/ExtraServices/ExtraServices";
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
 import Header from "./components/Header/Header";
@@ -20,6 +21,7 @@ function App() {
       <ExtraServices />
       <FeedbackForm title={["Легко", "онлайн"]} accent="замовте послугу " />
       <Questions />
+      <Equipment />
     </>
   );
 }

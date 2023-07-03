@@ -1,0 +1,174 @@
+.equipment {
+  padding-top: 25px;
+  padding-bottom: 60px;
+}
+.title {
+  color: #407bff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.equipmentList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.equipmentItem {
+  max-width: 270px;
+}
+.equipmentItem img {
+  border-radius: 15px;
+  background: #6b99ff;
+  box-sizing: content-box;
+  margin-bottom: 20px;
+}
+.vacuumCleaner {
+  width: 174px;
+  height: 188px;
+  padding: 16px 41px;
+}
+.steamCleaner {
+  width: 213px;
+  height: 150px;
+  padding: 35px 28px;
+}
+.windshieldWiper {
+  width: 180px;
+  height: 180px;
+  padding: 20px 44px;
+}
+.equipmentName {
+  color: #407bff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 12px;
+}
+.equipmentDesc {
+  color: #263238;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+}
+.chemicalList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.bottle1,
+.bottle2 {
+  width: 196px;
+  height: 196px;
+  padding: 12px 37px;
+  border-radius: 15px;
+  background: #6b99ff;
+  box-sizing: content-box;
+  margin-bottom: 16px;
+}
+.chemicalItem {
+  max-width: 270px;
+}
+.chemicalName {
+  color: #407bff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  max-width: 265px;
+}
+.chemicalDesc {
+  color: #263238;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+@media (min-width: 1340px) {
+  .equipment {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+  .title {
+    font-size: 32px;
+    line-height: 18px;
+    padding-bottom: 50px;
+  }
+  .equipmentList {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 89px;
+    margin-bottom: 120px;
+  }
+  .equipmentItem,
+  .chemicalItem {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .vacuumCleaner {
+    width: 215px;
+    height: 230px;
+    padding: 20px 53px;
+  }
+  .steamCleaner {
+    width: 275px;
+    height: 195px;
+    padding: 38px 22px;
+  }
+  .windshieldWiper {
+    width: 240px;
+    height: 240px;
+    padding: 15px 40px;
+  }
+  .equipmentName,
+  .chemicalName {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .equipmentDesc,
+  .chemicalDesc {
+    text-align: center;
+  }
+  .chemicalList {
+    position: relative;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 130px;
+  }
+  .bottle1,
+  .bottle2 {
+    width: 240px;
+    height: 240px;
+    padding: 15px 40px;
+  }
+  .chemicalList::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 215px;
+    height: 245px;
+    background-image: url("../../assets/chemical-man-vacuum.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .chemicalList::before {
+    content: "";
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 215px;
+    height: 215px;
+    background-image: url("../../assets/chemical-man-break.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

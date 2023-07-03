@@ -3,7 +3,7 @@ import css from "./Questions.module.css";
 const Questions = () => {
   return (
     <section className={css.questions}>
-      <div className="container">
+     <div className={css.wrapper}> <div className="container">
         <h2 className={css.title}>Поширені запитання</h2>
 
         <div className={css.wrap}>
@@ -43,7 +43,7 @@ const Questions = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div></div>
     </section>
   );
 };

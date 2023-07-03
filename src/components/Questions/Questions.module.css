@@ -119,12 +119,45 @@
   .questions::before {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 120px;
     left: -30px;
     background-image: url("../../assets/general-desktop.svg");
     width: 120px;
     height: 280px;
     transform: rotate(14.5deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .questions::after {
+    content: "";
+    position: absolute;
+    bottom: 35%;
+    left: 0;
+    background-image: url("../../assets/questions-woman-vacuum.svg");
+    width: 202px;
+    height: 265px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    right: 0;
+    background-image: url("../../assets/question-woman-rag.svg");
+    width: 101px;
+    height: 316px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 22%;
+    right: 0;
+    background-image: url("../../assets/questions-woman-mop.svg");
+    width: 140px;
+    height: 325px;
     background-repeat: no-repeat;
     background-size: cover;
   }
