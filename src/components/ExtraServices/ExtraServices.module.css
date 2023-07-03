@@ -94,3 +94,69 @@
   text-align: center;
   padding-top: 15px;
 }
+
+@media (min-width: 1340px) {
+  .extraServices {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  .title {
+    max-width: 70%;
+    min-width: 1080px;
+    margin: 0 auto;
+  }
+  .wrap {
+    gap: 60px;
+  }
+  .dialogWrap {
+    justify-content: center;
+    gap: 93px;
+  }
+  .text {
+    font-size: 18px;
+    line-height: normal;
+    max-width: 195px;
+  }
+  .text::after {
+    width: 341px;
+    height: 191px;
+    top: -60%;
+    left: -50%;
+    margin-top: 0;
+  }
+  .womanImg {
+    width: 216px;
+    height: 340px;
+  }
+  .line {
+    width: 223.43px;
+    height: 39px;
+  }
+  .tableWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1650px;
+  }
+  .table {
+    min-width: 540px;
+  }
+  .tableTitle {
+    color: #407bff;
+    font-size: 20px;
+    background-color: #fff;
+  }
+  .tableItem {
+    padding: 15px 25px;
+  }
+  .serviceName,
+  .servicePrice {
+    font-size: 16px;
+  }
+  .tableItem:nth-child(odd) {
+    background-color: #fff;
+  }
+  .tableItem:nth-child(even) {
+    background-color: #ecf0f8;
+  }
+}

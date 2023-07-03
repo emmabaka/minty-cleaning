@@ -21,12 +21,18 @@
   min-width: 320px;
   padding: 8px 15px;
   color: #263238;
+  -webkit-text-fill-color: #263238;
   font-size: 13px;
   line-height: 18px;
   border-radius: 5px;
   border-color: transparent;
   background-color: #f9f9f9;
   outline: none;
+  appearance: none;
+  background-image: url("../../assets/down-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  cursor: pointer;
 }
 option {
   color: #263238;

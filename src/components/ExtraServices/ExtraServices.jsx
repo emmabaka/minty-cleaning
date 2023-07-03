@@ -1,8 +1,10 @@
-import woman from "../../assets/extra-services-woman.png";
+import woman from "../../assets/extra-services-woman-desktop.png";
 import line from "../../assets/extra-services-line.svg";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import css from "./ExtraServices.module.css";
 
 const ExtraServices = () => {
+  const isDesktop = useMediaQuery("only screen and (min-width : 1340px)");
   return (
     <section className={css.extraServices}>
       <div className="container">
@@ -73,19 +75,21 @@ const ExtraServices = () => {
               <span className={css.servicePrice}>від 30/м2 грн</span>
             </li>
           </ul>
-          <ul className={css.table}>
-            <li>
-              <h3 className={css.tableTitle}>Додаткові приміщення</h3>
-            </li>
-            <li className={css.tableItem}>
-              <span className={css.serviceName}>Балкон</span>
-              <span className={css.servicePrice}>від 150 грн</span>
-            </li>
-            <li className={css.tableItem}>
-              <span className={css.serviceName}>Комора</span>
-              <span className={css.servicePrice}>від 150 грн</span>
-            </li>
-          </ul>
+          {!isDesktop && (
+            <ul className={css.table}>
+              <li>
+                <h3 className={css.tableTitle}>Додаткові приміщення</h3>
+              </li>
+              <li className={css.tableItem}>
+                <span className={css.serviceName}>Балкон</span>
+                <span className={css.servicePrice}>від 150 грн</span>
+              </li>
+              <li className={css.tableItem}>
+                <span className={css.serviceName}>Комора</span>
+                <span className={css.servicePrice}>від 150 грн</span>
+              </li>
+            </ul>
+          )}
           <ul className={css.table}>
             <li>
               <h3 className={css.tableTitle}>Особисті побажання</h3>
@@ -109,8 +113,25 @@ const ExtraServices = () => {
               <span className={css.servicePrice}>від 20 грн</span>
             </li>
           </ul>
+          {isDesktop && (
+            <ul className={css.table}>
+              <li>
+                <h3 className={css.tableTitle}>Додаткові приміщення</h3>
+              </li>
+              <li className={css.tableItem}>
+                <span className={css.serviceName}>Балкон</span>
+                <span className={css.servicePrice}>від 150 грн</span>
+              </li>
+              <li className={css.tableItem}>
+                <span className={css.serviceName}>Комора</span>
+                <span className={css.servicePrice}>від 150 грн</span>
+              </li>
+            </ul>
+          )}
         </div>
-        <p className={css.hint}>*уточніть послугу, телефонуючи нам</p>
+        {!isDesktop && (
+          <p className={css.hint}>*уточніть послугу, телефонуючи нам</p>
+        )}
       </div>
     </section>
   );
