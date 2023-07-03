@@ -4,6 +4,7 @@ import Advantages from "./components/Advantages/Advantages";
 import Equipment from "./components/Equipment/Equipment";
 import ExtraServices from "./components/ExtraServices/ExtraServices";
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Questions from "./components/Questions/Questions";
@@ -22,6 +23,7 @@ function App() {
       <FeedbackForm title={["Легко", "онлайн"]} accent="замовте послугу " />
       <Questions />
       <Equipment />
+      <Footer />
     </>
   );
 }
