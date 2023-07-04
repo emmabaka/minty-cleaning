@@ -23,12 +23,12 @@ const Room = () => {
 
   useEffect(() => {
     if (isSofaClick) {
-      tv.forEach((item) => (item.style.filter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.filter = "blur(2px)"));
-      plant.forEach((item) => (item.style.filter = "blur(2px)"));
-      desk.forEach((item) => (item.style.filter = "blur(2px)"));
-      window.forEach((item) => (item.style.filter = "blur(2px)"));
-      carpet.forEach((item) => (item.style.filter = "blur(2px)"));
+      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      desk.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      window.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      carpet.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
       deskBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       windowBtn.forEach((item) => (item.style.display = "none"));
@@ -40,12 +40,12 @@ const Room = () => {
       !isTvClick &&
       !isWindowClick
     ) {
-      tv.forEach((item) => (item.style.filter = "blur(0)"));
-      lamp.forEach((item) => (item.style.filter = "blur(0)"));
-      plant.forEach((item) => (item.style.filter = "blur(0)"));
-      desk.forEach((item) => (item.style.filter = "blur(0)"));
-      window.forEach((item) => (item.style.filter = "blur(0)"));
-      carpet.forEach((item) => (item.style.filter = "blur(0)"));
+      tv.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      lamp.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      plant.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      desk.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      window.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      carpet.forEach((item) => (item.style.webkitFilter = "blur(0)"));
       deskBtn.forEach((item) => (item.style.display = "block"));
       tvBtn.forEach((item) => (item.style.display = "block"));
       windowBtn.forEach((item) => (item.style.display = "block"));
@@ -71,12 +71,12 @@ const Room = () => {
 
   useEffect(() => {
     if (isWindowClick) {
-      tv.forEach((item) => (item.style.filter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.filter = "blur(2px)"));
-      plant.forEach((item) => (item.style.filter = "blur(2px)"));
-      desk.forEach((item) => (item.style.filter = "blur(2px)"));
-      sofa.forEach((item) => (item.style.filter = "blur(2px)"));
-      carpet.forEach((item) => (item.style.filter = "blur(2px)"));
+      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      desk.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      sofa.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      carpet.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
       deskBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       sofaBtn.forEach((item) => (item.style.display = "none"));
@@ -88,12 +88,12 @@ const Room = () => {
       !isTvClick &&
       !isWindowClick
     ) {
-      tv.forEach((item) => (item.style.filter = "blur(0)"));
-      lamp.forEach((item) => (item.style.filter = "blur(0)"));
-      plant.forEach((item) => (item.style.filter = "blur(0)"));
-      desk.forEach((item) => (item.style.filter = "blur(0)"));
-      sofa.forEach((item) => (item.style.filter = "blur(0)"));
-      carpet.forEach((item) => (item.style.filter = "blur(0)"));
+      tv.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      lamp.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      plant.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      desk.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      sofa.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      carpet.forEach((item) => (item.style.webkitFilter = "blur(0)"));
       deskBtn.forEach((item) => (item.style.display = "block"));
       tvBtn.forEach((item) => (item.style.display = "block"));
       sofaBtn.forEach((item) => (item.style.display = "block"));
@@ -119,12 +119,12 @@ const Room = () => {
 
   useEffect(() => {
     if (isDeskClick) {
-      tv.forEach((item) => (item.style.filter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.filter = "blur(2px)"));
-      plant.forEach((item) => (item.style.filter = "blur(2px)"));
-      window.forEach((item) => (item.style.filter = "blur(2px)"));
-      sofa.forEach((item) => (item.style.filter = "blur(2px)"));
-      carpet.forEach((item) => (item.style.filter = "blur(2px)"));
+      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      window.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      sofa.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      carpet.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
       windowBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       sofaBtn.forEach((item) => (item.style.display = "none"));
@@ -136,12 +136,12 @@ const Room = () => {
       !isTvClick &&
       !isWindowClick
     ) {
-      tv.forEach((item) => (item.style.filter = "blur(0)"));
-      lamp.forEach((item) => (item.style.filter = "blur(0)"));
-      plant.forEach((item) => (item.style.filter = "blur(0)"));
-      window.forEach((item) => (item.style.filter = "blur(0)"));
-      sofa.forEach((item) => (item.style.filter = "blur(0)"));
-      carpet.forEach((item) => (item.style.filter = "blur(0)"));
+      tv.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      lamp.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      plant.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      window.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      sofa.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      carpet.forEach((item) => (item.style.webkitFilter = "blur(0)"));
       windowBtn.forEach((item) => (item.style.display = "block"));
       tvBtn.forEach((item) => (item.style.display = "block"));
       sofaBtn.forEach((item) => (item.style.display = "block"));
@@ -170,12 +170,12 @@ const Room = () => {
   useEffect(() => {
     if (isCarpetClick) {
       carpet.forEach((item) => (item.style.fill = "#407BFF"));
-      tv.forEach((item) => (item.style.filter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.filter = "blur(2px)"));
-      plant.forEach((item) => (item.style.filter = "blur(2px)"));
-      window.forEach((item) => (item.style.filter = "blur(2px)"));
-      sofa.forEach((item) => (item.style.filter = "blur(2px)"));
-      desk.forEach((item) => (item.style.filter = "blur(2px)"));
+      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      window.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      sofa.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+      desk.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
       windowBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       sofaBtn.forEach((item) => (item.style.display = "none"));
