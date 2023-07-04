@@ -8,7 +8,9 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Questions from "./components/Questions/Questions";
+import Room from "./components/Room/Room";
 import Services from "./components/Services/Services";
+import WorkInclude from "./components/WorkInclude/WorkInclude";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <Advantages />
       <Services />
       <ExtraServices />
+      <WorkInclude />
       <FeedbackForm title={["Легко", "онлайн"]} accent="замовте послугу " />
       <Questions />
       <Equipment />
