@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import css from "./Room.module.css";
 
 const Room = () => {
@@ -21,14 +21,76 @@ const Room = () => {
   const [isWindowClick, setWindowClick] = useState(false);
   const [isCarpetClick, setCarpetClick] = useState(false);
 
+  const svgRef = useRef(null);
+
+  const addBlurToElement = (item, id) => {
+    const filter = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "filter"
+    );
+
+    filter.setAttribute("id", `blur-${id}`);
+
+    const blur = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "feGaussianBlur"
+    );
+    blur.setAttribute("in", "SourceGraphic");
+    blur.setAttribute("stdDeviation", "2"); // Інтенсивність (2 самий оптимальний)
+    filter.appendChild(blur);
+    svgRef.current.appendChild(filter);
+
+    item.style.filter = `url(#blur-${id})`;
+  };
+
+  const removeAllFilters = () => {
+    const filterElements = document.querySelectorAll("filter");
+
+    filterElements.forEach((el) => {
+      const filterElement = el;
+      filterElement.parentNode.removeChild(filterElement);
+    });
+  };
+
   useEffect(() => {
-    if (isSofaClick) {
-      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      desk.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      window.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      carpet.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+    const resetOnBlur = (e) => {
+      if (
+        ![...e.target.classList].includes("click-area-rect") &&
+        !e.target.id.includes("button")
+      ) {
+        if (
+          isSofaClick ||
+          isDeskClick ||
+          isTvClick ||
+          isWindowClick ||
+          isCarpetClick
+        ) {
+          setSofaClick(false);
+          setDeskClick(false);
+          setTvClick(false);
+          setWindowClick(false);
+          setCarpetClick(false);
+        }
+      }
+    };
+
+    document.addEventListener("click", (e) => resetOnBlur(e));
+
+    return () => document.removeEventListener("click", (e) => resetOnBlur(e));
+  }, [isSofaClick, isDeskClick, isTvClick, isWindowClick, isCarpetClick]);
+
+  useEffect(() => {
+    const isSomethingClicked =
+      isDeskClick || isTvClick || isWindowClick || isCarpetClick;
+
+    if (isSofaClick && !isSomethingClicked) {
+      tv.forEach((item) => addBlurToElement(item, "tv"));
+      lamp.forEach((item) => addBlurToElement(item, "lamp"));
+      plant.forEach((item) => addBlurToElement(item, "plant"));
+      desk.forEach((item) => addBlurToElement(item, "desk"));
+      window.forEach((item) => addBlurToElement(item, "window"));
+      carpet.forEach((item) => addBlurToElement(item, "carpet"));
+
       deskBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       windowBtn.forEach((item) => (item.style.display = "none"));
@@ -40,43 +102,28 @@ const Room = () => {
       !isTvClick &&
       !isWindowClick
     ) {
-      tv.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      lamp.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      plant.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      desk.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      window.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      carpet.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      removeAllFilters();
+
       deskBtn.forEach((item) => (item.style.display = "block"));
       tvBtn.forEach((item) => (item.style.display = "block"));
       windowBtn.forEach((item) => (item.style.display = "block"));
       carpetBtn.forEach((item) => (item.style.display = "block"));
     }
-  }, [
-    carpet,
-    carpetBtn,
-    desk,
-    deskBtn,
-    isCarpetClick,
-    isDeskClick,
-    isSofaClick,
-    isTvClick,
-    isWindowClick,
-    lamp,
-    plant,
-    tv,
-    tvBtn,
-    window,
-    windowBtn,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isCarpetClick, isDeskClick, isSofaClick, isTvClick, isWindowClick]);
 
   useEffect(() => {
-    if (isWindowClick) {
-      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      desk.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      sofa.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      carpet.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+    const isSomethingClicked =
+      isSofaClick || isDeskClick || isTvClick || isCarpetClick;
+
+    if (isWindowClick && !isSomethingClicked) {
+      tv.forEach((item) => addBlurToElement(item, "tv"));
+      lamp.forEach((item) => addBlurToElement(item, "lamp"));
+      plant.forEach((item) => addBlurToElement(item, "plant"));
+      desk.forEach((item) => addBlurToElement(item, "desk"));
+      sofa.forEach((item) => addBlurToElement(item, "sofa"));
+      carpet.forEach((item) => addBlurToElement(item, "carpet"));
+
       deskBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       sofaBtn.forEach((item) => (item.style.display = "none"));
@@ -88,43 +135,28 @@ const Room = () => {
       !isTvClick &&
       !isWindowClick
     ) {
-      tv.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      lamp.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      plant.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      desk.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      sofa.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      carpet.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      removeAllFilters();
+
       deskBtn.forEach((item) => (item.style.display = "block"));
       tvBtn.forEach((item) => (item.style.display = "block"));
       sofaBtn.forEach((item) => (item.style.display = "block"));
       carpetBtn.forEach((item) => (item.style.display = "block"));
     }
-  }, [
-    carpet,
-    carpetBtn,
-    desk,
-    deskBtn,
-    isCarpetClick,
-    isDeskClick,
-    isSofaClick,
-    isTvClick,
-    isWindowClick,
-    lamp,
-    plant,
-    sofa,
-    sofaBtn,
-    tv,
-    tvBtn,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isCarpetClick, isDeskClick, isSofaClick, isTvClick, isWindowClick]);
 
   useEffect(() => {
-    if (isDeskClick) {
-      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      window.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      sofa.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      carpet.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+    const isSomethingClicked =
+      isSofaClick || isTvClick || isWindowClick || isCarpetClick;
+
+    if (isDeskClick && !isSomethingClicked) {
+      tv.forEach((item) => addBlurToElement(item, "tv"));
+      lamp.forEach((item) => addBlurToElement(item, "lamp"));
+      plant.forEach((item) => addBlurToElement(item, "plant"));
+      window.forEach((item) => addBlurToElement(item, "window"));
+      sofa.forEach((item) => addBlurToElement(item, "sofa"));
+      carpet.forEach((item) => addBlurToElement(item, "carpet"));
+
       windowBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       sofaBtn.forEach((item) => (item.style.display = "none"));
@@ -136,46 +168,30 @@ const Room = () => {
       !isTvClick &&
       !isWindowClick
     ) {
-      tv.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      lamp.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      plant.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      window.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      sofa.forEach((item) => (item.style.webkitFilter = "blur(0)"));
-      carpet.forEach((item) => (item.style.webkitFilter = "blur(0)"));
+      removeAllFilters();
+
       windowBtn.forEach((item) => (item.style.display = "block"));
       tvBtn.forEach((item) => (item.style.display = "block"));
       sofaBtn.forEach((item) => (item.style.display = "block"));
       carpetBtn.forEach((item) => (item.style.display = "block"));
     }
-  }, [
-    carpet,
-    carpetBtn,
-    desk,
-    deskBtn,
-    isCarpetClick,
-    isDeskClick,
-    isSofaClick,
-    isTvClick,
-    isWindowClick,
-    lamp,
-    plant,
-    sofa,
-    sofaBtn,
-    tv,
-    tvBtn,
-    window,
-    windowBtn,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isCarpetClick, isDeskClick, isSofaClick, isTvClick, isWindowClick]);
 
   useEffect(() => {
-    if (isCarpetClick) {
+    const isSomethingClicked =
+      isSofaClick || isDeskClick || isTvClick || isWindowClick;
+
+    if (isCarpetClick && !isSomethingClicked) {
       carpet.forEach((item) => (item.style.fill = "#407BFF"));
-      tv.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      plant.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      window.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      sofa.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
-      desk.forEach((item) => (item.style.webkitFilter = "blur(2px)"));
+
+      tv.forEach((item) => addBlurToElement(item, "tv"));
+      lamp.forEach((item) => addBlurToElement(item, "lamp"));
+      plant.forEach((item) => addBlurToElement(item, "plant"));
+      window.forEach((item) => addBlurToElement(item, "window"));
+      sofa.forEach((item) => addBlurToElement(item, "sofa"));
+      desk.forEach((item) => addBlurToElement(item, "desk"));
+
       windowBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
       sofaBtn.forEach((item) => (item.style.display = "none"));
@@ -188,45 +204,29 @@ const Room = () => {
       !isWindowClick
     ) {
       carpet.forEach((item) => (item.style.fill = "#B3CAFF"));
-      tv.forEach((item) => (item.style.filter = "blur(0)"));
-      lamp.forEach((item) => (item.style.filter = "blur(0)"));
-      plant.forEach((item) => (item.style.filter = "blur(0)"));
-      window.forEach((item) => (item.style.filter = "blur(0)"));
-      sofa.forEach((item) => (item.style.filter = "blur(0)"));
-      desk.forEach((item) => (item.style.filter = "blur(0)"));
+
+      removeAllFilters();
+
       windowBtn.forEach((item) => (item.style.display = "block"));
       tvBtn.forEach((item) => (item.style.display = "block"));
       sofaBtn.forEach((item) => (item.style.display = "block"));
       deskBtn.forEach((item) => (item.style.display = "block"));
     }
-  }, [
-    carpet,
-    carpetBtn,
-    desk,
-    deskBtn,
-    isCarpetClick,
-    isDeskClick,
-    isSofaClick,
-    isTvClick,
-    isWindowClick,
-    lamp,
-    plant,
-    sofa,
-    sofaBtn,
-    tv,
-    tvBtn,
-    window,
-    windowBtn,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isCarpetClick, isDeskClick, isSofaClick, isTvClick, isWindowClick]);
 
   useEffect(() => {
-    if (isTvClick) {
-      carpet.forEach((item) => (item.style.filter = "blur(2px)"));
-      lamp.forEach((item) => (item.style.filter = "blur(2px)"));
-      plant.forEach((item) => (item.style.filter = "blur(2px)"));
-      window.forEach((item) => (item.style.filter = "blur(2px)"));
-      sofa.forEach((item) => (item.style.filter = "blur(2px)"));
-      desk.forEach((item) => (item.style.filter = "blur(2px)"));
+    const isSomethingClicked =
+      isSofaClick || isDeskClick || isWindowClick || isCarpetClick;
+
+    if (isTvClick && !isSomethingClicked) {
+      carpet.forEach((item) => addBlurToElement(item, "carpet"));
+      lamp.forEach((item) => addBlurToElement(item, "lamp"));
+      plant.forEach((item) => addBlurToElement(item, "plant"));
+      window.forEach((item) => addBlurToElement(item, "window"));
+      sofa.forEach((item) => addBlurToElement(item, "sofa"));
+      desk.forEach((item) => addBlurToElement(item, "desk"));
+
       windowBtn.forEach((item) => (item.style.display = "none"));
       carpetBtn.forEach((item) => (item.style.display = "none"));
       sofaBtn.forEach((item) => (item.style.display = "none"));
@@ -238,42 +238,22 @@ const Room = () => {
       !isTvClick &&
       !isWindowClick
     ) {
-      carpet.forEach((item) => (item.style.filter = "blur(0)"));
-      lamp.forEach((item) => (item.style.filter = "blur(0)"));
-      plant.forEach((item) => (item.style.filter = "blur(0)"));
-      window.forEach((item) => (item.style.filter = "blur(0)"));
-      sofa.forEach((item) => (item.style.filter = "blur(0)"));
-      desk.forEach((item) => (item.style.filter = "blur(0)"));
+      removeAllFilters();
+
       windowBtn.forEach((item) => (item.style.display = "block"));
       carpetBtn.forEach((item) => (item.style.display = "block"));
       sofaBtn.forEach((item) => (item.style.display = "block"));
       deskBtn.forEach((item) => (item.style.display = "block"));
     }
-  }, [
-    carpet,
-    carpetBtn,
-    desk,
-    deskBtn,
-    isCarpetClick,
-    isDeskClick,
-    isSofaClick,
-    isTvClick,
-    isWindowClick,
-    lamp,
-    plant,
-    sofa,
-    sofaBtn,
-    tv,
-    tvBtn,
-    window,
-    windowBtn,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isCarpetClick, isDeskClick, isSofaClick, isTvClick, isWindowClick]);
 
   return (
     <>
       <h2 className={css.title}>Кімната</h2>
       <div className={css.wrap}>
         <svg
+          ref={svgRef}
           width="294"
           height="274"
           viewBox="0 0 294 274"
@@ -1882,11 +1862,8 @@ const Room = () => {
             d="M169.766 188.683C170.387 188.056 170.92 187.348 171.353 186.578C172.086 185.283 172.218 183.55 171.84 183.34C171.461 183.13 169.916 184.851 169.916 184.851C170.058 184.125 170.113 183.384 170.079 182.644C170.018 181.493 169.736 180.443 169.405 180.245C169.075 180.048 168.336 181.487 168.017 182.542C167.699 183.598 167.512 184.461 167.512 184.461C167.384 183.648 167.193 182.847 166.941 182.063C166.557 180.971 166.208 180.719 165.938 180.827C165.667 180.935 165.487 181.427 165.409 182.902C165.381 183.599 165.403 184.296 165.475 184.989C165.475 184.989 164.928 184.389 164.327 183.79C163.726 183.19 163.377 183.064 163.191 183.19C163.005 183.316 162.945 184.306 163.972 186.159C164.484 187.101 165.139 187.959 165.914 188.701C165.914 188.701 167.332 189.601 169.766 188.683Z"
             fill="#407BFF"
           />
-          <path
-            id="sofa-button"
-            d="M110.172 139.094C110.172 141.982 107.825 144.324 104.929 144.324C102.033 144.324 99.6868 141.982 99.6868 139.094C99.6868 136.207 102.033 133.864 104.929 133.864C107.825 133.864 110.172 136.207 110.172 139.094Z"
-            fill="white"
-            stroke="#407BFF"
+          <g
+            id="click-area"
             onClick={() => {
               if (!isSofaClick) {
                 setSofaClick(true);
@@ -1894,12 +1871,26 @@ const Room = () => {
                 setSofaClick(false);
               }
             }}
-          />
-          <path
-            id="window-button"
-            d="M128.965 70.3282C128.965 73.2156 126.619 75.5582 123.722 75.5582C120.826 75.5582 118.48 73.2156 118.48 70.3282C118.48 67.4407 120.826 65.0981 123.722 65.0981C126.619 65.0981 128.965 67.4407 128.965 70.3282Z"
-            fill="white"
-            stroke="#407BFF"
+          >
+            <rect
+              className="click-area-rect"
+              x="85"
+              y="118"
+              width="40"
+              height="40"
+              pointerEvents="all"
+              fill="transparent"
+            />
+            <path
+              id="sofa-button"
+              d="M110.172 139.094C110.172 141.982 107.825 144.324 104.929 144.324C102.033 144.324 99.6868 141.982 99.6868 139.094C99.6868 136.207 102.033 133.864 104.929 133.864C107.825 133.864 110.172 136.207 110.172 139.094Z"
+              fill="white"
+              stroke="#407BFF"
+            />
+          </g>
+
+          <g
+            id="click-area"
             onClick={() => {
               if (!isWindowClick) {
                 setWindowClick(true);
@@ -1907,12 +1898,26 @@ const Room = () => {
                 setWindowClick(false);
               }
             }}
-          />
-          <path
-            id="tv-button"
-            d="M231.284 89.0826C231.284 91.97 228.938 94.3126 226.041 94.3126C223.145 94.3126 220.799 91.97 220.799 89.0826C220.799 86.1951 223.145 83.8525 226.041 83.8525C228.938 83.8525 231.284 86.1951 231.284 89.0826Z"
-            fill="white"
-            stroke="#407BFF"
+          >
+            <rect
+              className="click-area-rect"
+              x="101"
+              y="50"
+              width="40"
+              height="40"
+              pointerEvents="all"
+              fill="transparent"
+            />
+            <path
+              id="window-button"
+              d="M128.965 70.3282C128.965 73.2156 126.619 75.5582 123.722 75.5582C120.826 75.5582 118.48 73.2156 118.48 70.3282C118.48 67.4407 120.826 65.0981 123.722 65.0981C126.619 65.0981 128.965 67.4407 128.965 70.3282Z"
+              fill="white"
+              stroke="#407BFF"
+            />
+          </g>
+
+          <g
+            id="click-area"
             onClick={() => {
               if (!isTvClick) {
                 setTvClick(true);
@@ -1920,12 +1925,26 @@ const Room = () => {
                 setTvClick(false);
               }
             }}
-          />
-          <path
-            id="desk-button"
-            d="M155.067 206.818C155.067 209.705 152.721 212.048 149.824 212.048C146.928 212.048 144.582 209.705 144.582 206.818C144.582 203.93 146.928 201.588 149.824 201.588C152.721 201.588 155.067 203.93 155.067 206.818Z"
-            fill="white"
-            stroke="#407BFF"
+          >
+            <rect
+              className="click-area-rect"
+              x="205"
+              y="68"
+              width="40"
+              height="40"
+              pointerEvents="all"
+              fill="transparent"
+            />
+            <path
+              id="tv-button"
+              d="M231.284 89.0826C231.284 91.97 228.938 94.3126 226.041 94.3126C223.145 94.3126 220.799 91.97 220.799 89.0826C220.799 86.1951 223.145 83.8525 226.041 83.8525C228.938 83.8525 231.284 86.1951 231.284 89.0826Z"
+              fill="white"
+              stroke="#407BFF"
+            />
+          </g>
+
+          <g
+            id="click-area"
             onClick={() => {
               if (!isDeskClick) {
                 setDeskClick(true);
@@ -1933,12 +1952,26 @@ const Room = () => {
                 setDeskClick(false);
               }
             }}
-          />
-          <path
-            id="rug-button"
-            d="M184.301 151.597C184.301 154.485 181.955 156.827 179.058 156.827C176.162 156.827 173.816 154.485 173.816 151.597C173.816 148.71 176.162 146.367 179.058 146.367C181.955 146.367 184.301 148.71 184.301 151.597Z"
-            fill="white"
-            stroke="#407BFF"
+          >
+            <rect
+              className="click-area-rect"
+              x="130"
+              y="187"
+              width="40"
+              height="40"
+              pointerEvents="all"
+              fill="transparent"
+            />
+            <path
+              id="desk-button"
+              d="M155.067 206.818C155.067 209.705 152.721 212.048 149.824 212.048C146.928 212.048 144.582 209.705 144.582 206.818C144.582 203.93 146.928 201.588 149.824 201.588C152.721 201.588 155.067 203.93 155.067 206.818Z"
+              fill="white"
+              stroke="#407BFF"
+            />
+          </g>
+
+          <g
+            id="click-area"
             onClick={() => {
               if (!isCarpetClick) {
                 setCarpetClick(true);
@@ -1946,7 +1979,23 @@ const Room = () => {
                 setCarpetClick(false);
               }
             }}
-          />
+          >
+            <rect
+              className="click-area-rect"
+              x="158"
+              y="131"
+              width="40"
+              height="40"
+              pointerEvents="all"
+              fill="transparent"
+            />
+            <path
+              id="rug-button"
+              d="M184.301 151.597C184.301 154.485 181.955 156.827 179.058 156.827C176.162 156.827 173.816 154.485 173.816 151.597C173.816 148.71 176.162 146.367 179.058 146.367C181.955 146.367 184.301 148.71 184.301 151.597Z"
+              fill="white"
+              stroke="#407BFF"
+            />
+          </g>
         </svg>
       </div>
     </>

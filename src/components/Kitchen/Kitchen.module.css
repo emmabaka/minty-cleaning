@@ -10,7 +10,3 @@
   display: flex;
   justify-content: center;
 }
-
-g[id*="click-area"] {
-  cursor: pointer;
-}
