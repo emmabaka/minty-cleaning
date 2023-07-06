@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { addBlurToElement, removeAllFilters } from "../../utils/blur";
 import css from "./Room.module.css";
 
 const Room = () => {
@@ -22,35 +23,6 @@ const Room = () => {
   const [isCarpetClick, setCarpetClick] = useState(false);
 
   const svgRef = useRef(null);
-
-  const addBlurToElement = (item, id) => {
-    const filter = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "filter"
-    );
-
-    filter.setAttribute("id", `blur-${id}`);
-
-    const blur = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "feGaussianBlur"
-    );
-    blur.setAttribute("in", "SourceGraphic");
-    blur.setAttribute("stdDeviation", "2"); // Інтенсивність (2 самий оптимальний)
-    filter.appendChild(blur);
-    svgRef.current.appendChild(filter);
-
-    item.style.filter = `url(#blur-${id})`;
-  };
-
-  const removeAllFilters = () => {
-    const filterElements = document.querySelectorAll("filter");
-
-    filterElements.forEach((el) => {
-      const filterElement = el;
-      filterElement.parentNode.removeChild(filterElement);
-    });
-  };
 
   useEffect(() => {
     const resetOnBlur = (e) => {
@@ -84,12 +56,12 @@ const Room = () => {
       isDeskClick || isTvClick || isWindowClick || isCarpetClick;
 
     if (isSofaClick && !isSomethingClicked) {
-      tv.forEach((item) => addBlurToElement(item, "tv"));
-      lamp.forEach((item) => addBlurToElement(item, "lamp"));
-      plant.forEach((item) => addBlurToElement(item, "plant"));
-      desk.forEach((item) => addBlurToElement(item, "desk"));
-      window.forEach((item) => addBlurToElement(item, "window"));
-      carpet.forEach((item) => addBlurToElement(item, "carpet"));
+      tv.forEach((item) => addBlurToElement(svgRef, item, "tv"));
+      lamp.forEach((item) => addBlurToElement(svgRef, item, "lamp"));
+      plant.forEach((item) => addBlurToElement(svgRef, item, "plant"));
+      desk.forEach((item) => addBlurToElement(svgRef, item, "desk"));
+      window.forEach((item) => addBlurToElement(svgRef, item, "window"));
+      carpet.forEach((item) => addBlurToElement(svgRef, item, "carpet"));
 
       deskBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
@@ -117,12 +89,12 @@ const Room = () => {
       isSofaClick || isDeskClick || isTvClick || isCarpetClick;
 
     if (isWindowClick && !isSomethingClicked) {
-      tv.forEach((item) => addBlurToElement(item, "tv"));
-      lamp.forEach((item) => addBlurToElement(item, "lamp"));
-      plant.forEach((item) => addBlurToElement(item, "plant"));
-      desk.forEach((item) => addBlurToElement(item, "desk"));
-      sofa.forEach((item) => addBlurToElement(item, "sofa"));
-      carpet.forEach((item) => addBlurToElement(item, "carpet"));
+      tv.forEach((item) => addBlurToElement(svgRef, item, "tv"));
+      lamp.forEach((item) => addBlurToElement(svgRef, item, "lamp"));
+      plant.forEach((item) => addBlurToElement(svgRef, item, "plant"));
+      desk.forEach((item) => addBlurToElement(svgRef, item, "desk"));
+      sofa.forEach((item) => addBlurToElement(svgRef, item, "sofa"));
+      carpet.forEach((item) => addBlurToElement(svgRef, item, "carpet"));
 
       deskBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
@@ -150,12 +122,12 @@ const Room = () => {
       isSofaClick || isTvClick || isWindowClick || isCarpetClick;
 
     if (isDeskClick && !isSomethingClicked) {
-      tv.forEach((item) => addBlurToElement(item, "tv"));
-      lamp.forEach((item) => addBlurToElement(item, "lamp"));
-      plant.forEach((item) => addBlurToElement(item, "plant"));
-      window.forEach((item) => addBlurToElement(item, "window"));
-      sofa.forEach((item) => addBlurToElement(item, "sofa"));
-      carpet.forEach((item) => addBlurToElement(item, "carpet"));
+      tv.forEach((item) => addBlurToElement(svgRef, item, "tv"));
+      lamp.forEach((item) => addBlurToElement(svgRef, item, "lamp"));
+      plant.forEach((item) => addBlurToElement(svgRef, item, "plant"));
+      window.forEach((item) => addBlurToElement(svgRef, item, "window"));
+      sofa.forEach((item) => addBlurToElement(svgRef, item, "sofa"));
+      carpet.forEach((item) => addBlurToElement(svgRef, item, "carpet"));
 
       windowBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
@@ -185,12 +157,12 @@ const Room = () => {
     if (isCarpetClick && !isSomethingClicked) {
       carpet.forEach((item) => (item.style.fill = "#407BFF"));
 
-      tv.forEach((item) => addBlurToElement(item, "tv"));
-      lamp.forEach((item) => addBlurToElement(item, "lamp"));
-      plant.forEach((item) => addBlurToElement(item, "plant"));
-      window.forEach((item) => addBlurToElement(item, "window"));
-      sofa.forEach((item) => addBlurToElement(item, "sofa"));
-      desk.forEach((item) => addBlurToElement(item, "desk"));
+      tv.forEach((item) => addBlurToElement(svgRef, item, "tv"));
+      lamp.forEach((item) => addBlurToElement(svgRef, item, "lamp"));
+      plant.forEach((item) => addBlurToElement(svgRef, item, "plant"));
+      window.forEach((item) => addBlurToElement(svgRef, item, "window"));
+      sofa.forEach((item) => addBlurToElement(svgRef, item, "sofa"));
+      desk.forEach((item) => addBlurToElement(svgRef, item, "desk"));
 
       windowBtn.forEach((item) => (item.style.display = "none"));
       tvBtn.forEach((item) => (item.style.display = "none"));
@@ -220,12 +192,12 @@ const Room = () => {
       isSofaClick || isDeskClick || isWindowClick || isCarpetClick;
 
     if (isTvClick && !isSomethingClicked) {
-      carpet.forEach((item) => addBlurToElement(item, "carpet"));
-      lamp.forEach((item) => addBlurToElement(item, "lamp"));
-      plant.forEach((item) => addBlurToElement(item, "plant"));
-      window.forEach((item) => addBlurToElement(item, "window"));
-      sofa.forEach((item) => addBlurToElement(item, "sofa"));
-      desk.forEach((item) => addBlurToElement(item, "desk"));
+      carpet.forEach((item) => addBlurToElement(svgRef, item, "carpet"));
+      lamp.forEach((item) => addBlurToElement(svgRef, item, "lamp"));
+      plant.forEach((item) => addBlurToElement(svgRef, item, "plant"));
+      window.forEach((item) => addBlurToElement(svgRef, item, "window"));
+      sofa.forEach((item) => addBlurToElement(svgRef, item, "sofa"));
+      desk.forEach((item) => addBlurToElement(svgRef, item, "desk"));
 
       windowBtn.forEach((item) => (item.style.display = "none"));
       carpetBtn.forEach((item) => (item.style.display = "none"));
