@@ -1,0 +1,13 @@
+.title {
+    color: #407bff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    padding-bottom: 20px;
+  }
+  .wrap {
+    display: flex;
+    justify-content: center;
+  }
+  

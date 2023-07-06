@@ -9,8 +9,11 @@
 .wrap {
   display: flex;
   justify-content: center;
+  margin-bottom: 27px;
 }
 
-g[id*="click-area"] {
-  cursor: pointer;
+@media (min-width: 1340px) {
+  g[id*="click-area"] {
+    cursor: pointer;
+  }
 }
