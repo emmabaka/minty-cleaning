@@ -10,8 +10,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-}
-.svgWrap {
   max-width: 294px;
 }
 @media (min-width: 1340px) {
@@ -19,7 +17,6 @@
     cursor: pointer;
   }
 }
-
 .details {
   display: none;
   position: absolute;
@@ -45,4 +42,19 @@
   background-image: url("../../assets/close.svg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.sinkDetails {
+  top: 160px;
+  right: 80px;
+}
+
+.bathDetails {
+  top: 90px;
+  right: 95px;
+}
+
+.shelfDetails {
+  top: 125px;
+  right: 95px;
 }
