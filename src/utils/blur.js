@@ -11,7 +11,7 @@ export const addBlurToElement = (svgRef, item, id) => {
     "feGaussianBlur"
   );
   blur.setAttribute("in", "SourceGraphic");
-  blur.setAttribute("stdDeviation", "1"); // Інтенсивність (2 самий оптимальний)
+  blur.setAttribute("stdDeviation", "1.5"); // Інтенсивність (2 самий оптимальний)
   filter.appendChild(blur);
   svgRef.current.appendChild(filter);
 
