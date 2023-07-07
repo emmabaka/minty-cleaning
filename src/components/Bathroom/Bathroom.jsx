@@ -50,12 +50,14 @@ const Bathroom = () => {
       shelf.forEach((item) => addBlurToElement(svgRef, item, "shelf"));
       window.forEach((item) => addBlurToElement(svgRef, item, "window"));
 
+      sinkBtn.forEach((item) => (item.style.display = "none"));
       bathBtn.forEach((item) => (item.style.display = "none"));
       shelfBtn.forEach((item) => (item.style.display = "none"));
       sinkDetails.forEach((item) => (item.style.display = "block"));
     } else if (!isBathClick && !isShelfClick && !isSinkClick) {
       removeAllFilters();
 
+      sinkBtn.forEach((item) => (item.style.display = "block"));
       bathBtn.forEach((item) => (item.style.display = "block"));
       shelfBtn.forEach((item) => (item.style.display = "block"));
       sinkDetails.forEach((item) => (item.style.display = "none"));
@@ -71,12 +73,14 @@ const Bathroom = () => {
       shelf.forEach((item) => addBlurToElement(svgRef, item, "shelf"));
       window.forEach((item) => addBlurToElement(svgRef, item, "window"));
 
+      bathBtn.forEach((item) => (item.style.display = "none"));
       sinkBtn.forEach((item) => (item.style.display = "none"));
       shelfBtn.forEach((item) => (item.style.display = "none"));
       bathDetails.forEach((item) => (item.style.display = "block"));
     } else if (!isBathClick && !isShelfClick && !isSinkClick) {
       removeAllFilters();
 
+      bathBtn.forEach((item) => (item.style.display = "block"));
       sinkBtn.forEach((item) => (item.style.display = "block"));
       shelfBtn.forEach((item) => (item.style.display = "block"));
       bathDetails.forEach((item) => (item.style.display = "none"));
@@ -95,12 +99,14 @@ const Bathroom = () => {
       sinkStand.forEach((item) => addBlurToElement(svgRef, item, "sink-stand"));
       window.forEach((item) => addBlurToElement(svgRef, item, "window"));
 
+      shelfBtn.forEach((item) => (item.style.display = "none"));
       sinkBtn.forEach((item) => (item.style.display = "none"));
       bathBtn.forEach((item) => (item.style.display = "none"));
       shelfDetails.forEach((item) => (item.style.display = "block"));
     } else if (!isBathClick && !isShelfClick && !isSinkClick) {
       removeAllFilters();
 
+      shelfBtn.forEach((item) => (item.style.display = "block"));
       sinkBtn.forEach((item) => (item.style.display = "block"));
       bathBtn.forEach((item) => (item.style.display = "block"));
       shelfDetails.forEach((item) => (item.style.display = "none"));
