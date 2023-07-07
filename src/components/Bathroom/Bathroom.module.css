@@ -7,11 +7,42 @@
   padding-bottom: 20px;
 }
 .wrap {
+  position: relative;
   display: flex;
   justify-content: center;
+}
+.svgWrap {
+  max-width: 294px;
 }
 @media (min-width: 1340px) {
   g[id*="click-area"] {
     cursor: pointer;
   }
+}
+
+.details {
+  display: none;
+  position: absolute;
+  top: 120px;
+  right: 95px;
+  color: #263238;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 11px;
+  padding: 10px 15px 12px 10px;
+  max-width: 125px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.85);
+}
+.details::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  width: 5.5px;
+  height: 5.5px;
+  background-image: url("../../assets/close.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
