@@ -11,8 +11,55 @@
   justify-content: center;
   margin-bottom: 41px;
 }
+.svgWrap {
+  position: relative;
+  max-width: 274px;
+}
 @media (min-width: 1340px) {
   g[id*="click-area"] {
     cursor: pointer;
   }
+}
+.details {
+  display: none;
+  position: absolute;
+  top: 120px;
+  right: 95px;
+  color: #263238;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 11px;
+  max-width: 125px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.85);
+}
+.details::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  width: 5.5px;
+  height: 5.5px;
+  background-image: url("../../assets/close.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.itemsDetails {
+  top: 150px;
+  left: 40px;
+  padding: 10px;
+}
+.wardrobeDetails {
+  top: 110px;
+  right: 30px;
+  padding: 12px 18px 12px 12px;
+  max-width: 152px;
+}
+.shelfDetails {
+  top: 100px;
+  right: 45px;
+  padding: 12px 29px 12px 12px;
+  max-width: 125px;
 }
