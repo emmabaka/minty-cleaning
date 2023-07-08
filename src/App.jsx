@@ -7,6 +7,7 @@ import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
+import HowWeWork from "./components/HowWeWork/HowWeWork";
 import Questions from "./components/Questions/Questions";
 import Services from "./components/Services/Services";
 import WorkInclude from "./components/WorkInclude/WorkInclude";
@@ -21,6 +22,7 @@ function App() {
       <Advantages />
       <Services />
       <ExtraServices />
+      <HowWeWork />
       <WorkInclude />
       <FeedbackForm title={["Легко", "онлайн"]} accent="замовте послугу " />
       <Questions />
