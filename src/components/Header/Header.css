@@ -18,6 +18,10 @@ header {
   justify-content: center;
   gap: 10px;
 }
+.logoWrap img {
+  width: 48px;
+  height: 38px;
+}
 .logo {
   color: #3d4e62;
   font-size: 14px;

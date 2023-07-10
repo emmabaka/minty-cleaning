@@ -29,7 +29,7 @@
   background-color: #f9f9f9;
   outline: none;
   appearance: none;
-  background-image: url("../../assets/down-arrow.svg");
+  background-image: url("../../assets/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
   cursor: pointer;

@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo-header.png";
 import telegram from "../../assets/telegram.svg";
 import instagram from "../../assets/instagram.svg";
 import "./Header.css";
@@ -80,7 +80,7 @@ const Header = () => {
               </li>
             </ul>
             <div className={popupClass} id="popup"></div>
-            <div className='hamb' onClick={hambHandler}>
+            <div className="hamb" onClick={hambHandler}>
               <div className={hambClass} id="hamb">
                 <span className="bar"></span>
                 <span className="bar"></span>
