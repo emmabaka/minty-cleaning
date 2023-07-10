@@ -43,17 +43,7 @@ option {
   display: flex;
   gap: 5px;
 }
-.nameInput {
-  width: 100%;
-  padding: 8px 15px;
-  color: #263238;
-  font-size: 13px;
-  line-height: 18px;
-  border-radius: 5px;
-  border-color: transparent;
-  background-color: #f9f9f9;
-  outline: none;
-}
+.nameInput,
 .phoneInput {
   width: 100%;
   padding: 8px 15px;
@@ -78,6 +68,31 @@ option {
   border: 1px solid #407bff;
   border-radius: 10px;
   background-color: #407bff;
+}
+@media (min-width: 720px) {
+  .feedback {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .title {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  .form {
+    min-width: 320px;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .nameInput,
+  .phoneInput,
+  .select {
+    font-size: 14px;
+  }
+  .submitBtn {
+    font-size: 15px;
+    padding: 11px 15px;
+    border-radius: 12px;
+  }
 }
 @media (min-width: 1340px) {
   .feedback {

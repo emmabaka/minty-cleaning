@@ -30,7 +30,7 @@
     background-image: url("../../assets//line-icon.svg");
   }
 }
-@media (min-width: 1340px) {
+@media (min-width: 720px) {
   .heroWrap {
     height: 100vh;
     display: flex;
@@ -41,7 +41,7 @@
   }
   .title {
     position: relative;
-    font-size: 32px;
+    font-size: 22px;
     text-align: start;
   }
   .title:after {
@@ -50,12 +50,31 @@
     top: -15px;
     left: 0;
     display: block;
-    /* width: 139px; */
-    width: 150px;
-    height: 31px;
+    width: 93px;
+    height: 19px;
     background-image: url("../../assets/line-icon.svg");
     background-size: cover;
   }
+  .img {
+    width: 350px;
+    height: 230px;
+  }
+}
+@media (min-width: 960px) {
+  .img {
+    width: 450px;
+    height: 330px;
+  }
+}
+@media (min-width: 1340px) {
+  .title {
+    font-size: 32px;
+  }
+  .title:after {
+    width: 150px;
+    height: 31px;
+  }
+
   .img {
     width: 670px;
     height: 450px;

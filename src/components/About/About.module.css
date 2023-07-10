@@ -53,3 +53,21 @@
     height: 218px;
   }
 }
+@media (min-width: 720px) {
+  .about {
+    padding-top: 38px;
+    padding-bottom: 30px;
+  }
+  .title {
+    padding-bottom: 30px;
+    font-size: 24px;
+  }
+  .text {
+    padding: 30px;
+    font-size: 16px;
+  }
+  .text::after {
+    width: 139px;
+    height: 218px;
+  }
+}

@@ -38,9 +38,9 @@ header {
 .contacts {
   display: flex;
   align-items: center;
-
   gap: 20px;
 }
+
 .contactsPhone {
   color: #3d4e62;
   font-size: 15px;
@@ -105,9 +105,24 @@ header {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
+@media (min-width: 720px) {
+  .logo {
+    font-size: 18px;
+  }
+  .logoWrap {
+    gap: 12px;
+  }
+  .logoWrap img {
+    width: 55px;
+    height: 43px;
+  }
+}
 @media (min-width: 1340px) {
   .logo {
     font-size: 20px;
+  }
+  .logoWrap {
+    gap: 15px;
   }
   .logoWrap img {
     width: 64px;

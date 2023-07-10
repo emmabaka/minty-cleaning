@@ -14,7 +14,7 @@
   background-image: url("../../assets/people-footer.png");
 
   background-repeat: repeat-x;
-  /* background-size: cover; */
+  background-size: cover;
 }
 .footerContainer {
   display: flex;
@@ -127,4 +127,8 @@
     width: 165px;
     height: 29px;
   }
+}
+
+@media (min-width: 720px){
+    
 }
