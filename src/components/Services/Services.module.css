@@ -52,33 +52,33 @@
 .regular::after {
   content: "";
   position: absolute;
-  top: -68px;
+  top: -4px;
   right: -30px;
-  width: 57px;
-  height: 191px;
-  background-image: url("../../assets/regular-woman.svg");
+  width: 60px;
+  height: 157px;
+  background-image: url("../../assets/services/regular-woman.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .office::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -6px;
   left: -30px;
-  width: 54px;
-  height: 105px;
-  background-image: url("../../assets/office-woman.svg");
+  width: 70px;
+  height: 110px;
+  background-image: url("../../assets//services/office-woman.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .repair::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  right: -30px;
+  bottom: -3px;
+  right: -28px;
   width: 56px;
   height: 139px;
-  background-image: url("../../assets/repair-woman.svg");
+  background-image: url("../../assets//services/repair-woman.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -1,8 +1,8 @@
-import star from "../../assets/star.png";
-import medal from "../../assets/medal.png";
-import like from "../../assets/like.png";
-import security from "../../assets/security.png";
-import care from "../../assets/care.png";
+import star from "../../assets/advantages/star.png";
+import medal from "../../assets/advantages/medal.png";
+import like from "../../assets/advantages/like.png";
+import security from "../../assets/advantages/security.png";
+import care from "../../assets/advantages/care.png";
 import css from "./Advantages.module.css";
 
 const Advantages = () => {
