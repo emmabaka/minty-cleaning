@@ -129,9 +129,8 @@ const ExtraServices = () => {
             </ul>
           )}
         </div>
-        {!isDesktop && (
-          <p className={css.hint}>*уточніть послугу, телефонуючи нам</p>
-        )}
+
+        <p className={css.hint}>*уточніть послугу, телефонуючи нам</p>
       </div>
     </section>
   );
