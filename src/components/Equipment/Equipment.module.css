@@ -172,6 +172,55 @@
     background-size: cover;
   }
 }
-@media (min-width: 720px){
-    
+@media (min-width: 720px) {
+  .equipment {
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+  .title {
+    font-size: 24px;
+    padding-bottom: 40px;
+  }
+  .equipmentList {
+    gap: 35px;
+  }
+  .equipmentItem,
+  .chemicalItem {
+    max-width: 300px;
+  }
+  .equipmentItem img {
+    margin-bottom: 22px;
+  }
+  .vacuumCleaner {
+    width: 192px;
+    height: 207px;
+    padding: 21px 53px;
+  }
+  .steamCleaner {
+    width: 241px;
+    height: 169px;
+    padding: 40px 30px;
+  }
+  .windshieldWiper {
+    width: 210px;
+    height: 210px;
+    padding: 20px 45px;
+  }
+  .equipmentName {
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+  .chemicalList {
+    gap: 39px;
+  }
+  .bottle1,
+  .bottle2 {
+    width: 226px;
+    height: 226px;
+    margin-bottom: 18px;
+  }
+  .chemicalName {
+    font-size: 21px;
+    max-width: 240px;
+  }
 }
