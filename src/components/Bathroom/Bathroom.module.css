@@ -19,6 +19,10 @@
     cursor: pointer;
   }
 }
+.svg {
+  width: 302px;
+  height: 266px;
+}
 .details {
   display: none;
   position: absolute;
@@ -60,6 +64,39 @@
   top: 125px;
   right: 95px;
 }
-@media (min-width: 720px){
-    
+@media (min-width: 720px) {
+  .svg {
+    width: 321px;
+    height: 278px;
+  }
+}
+@media (min-width: 1340px) {
+  .svg {
+    width: 371px;
+    height: 327px;
+  }
+  .details {
+    font-style: 11px;
+    line-height: 1.2;
+  }
+  .sinkDetails {
+    top: 175px;
+    right: 40px;
+    padding: 12px 33px 12px 12px;
+    max-width: 156px;
+  }
+
+  .bathDetails {
+    top: 112px;
+    right: 50px;
+    padding: 12px 33px 12px 12px;
+    max-width: 140px;
+  }
+
+  .shelfDetails {
+    top: 140px;
+    right: 65px;
+    padding: 12px 32px 12px 12px;
+    max-width: 150px;
+  }
 }
