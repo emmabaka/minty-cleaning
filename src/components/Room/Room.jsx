@@ -280,9 +280,8 @@ const Room = () => {
             вичищаємо килим
           </div>
           <svg
+            className={css.svg}
             ref={svgRef}
-            width="294"
-            height="274"
             viewBox="0 0 294 274"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
