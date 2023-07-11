@@ -87,16 +87,47 @@
   .svgWrap {
     max-width: 300px;
   }
+  .details {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .details::after {
+    width: 6px;
+    height: 6px;
+  }
+  .sofaDetails {
+    top: 90px;
+    right: 25px;
+    padding: 12px 13px 12px 12px;
+  }
+  .tvDetails {
+    padding: 12px 26px 12px 12px;
+    top: 105px;
+    right: 125px;
+  }
+  .deskDetails {
+    top: 120px;
+    right: 125px;
+    max-width: 120px;
+    padding: 12px 18px 12px 12px;
+  }
+  .windowDetails {
+    padding: 12px 14px 12px 12px;
+    max-width: 135px;
+    top: 85px;
+    right: 40px;
+  }
+  .carpetDetails {
+    top: 90px;
+    right: 26px;
+    padding: 12px 13px 12px 12px;
+    max-width: 135px;
+  }
 }
 @media (min-width: 1340px) {
   .title {
     font-size: 24px;
     padding-bottom: 60px;
-  }
-  .details {
-    font-size: 11px;
-    min-width: 140px;
-    line-height: 1.2;
   }
   .svgWrap {
     max-width: 360px;
@@ -104,6 +135,11 @@
   .svg {
     width: 360px;
     height: 335px;
+  }
+  .details {
+    font-size: 11px;
+    min-width: 140px;
+    line-height: 1.2;
   }
   .details::after {
     width: 7px;
@@ -116,18 +152,19 @@
   }
   .tvDetails {
     padding: 12px 34px 12px 12px;
-    min-width: 120px;
+    max-width: 120px;
     top: 125px;
     right: 155px;
   }
   .deskDetails {
     top: 148px;
     right: 150px;
+    max-width: 145px;
     padding: 12px 30px 12px 12px;
   }
   .windowDetails {
     padding: 12px 15px 12px 12px;
-    min-width: 148px;
+    max-width: 148px;
     top: 100px;
     right: 60px;
   }
@@ -135,6 +172,6 @@
     top: 110px;
     right: 40px;
     padding: 12px 15px 12px 12px;
-    min-width: 151px;
+    max-width: 151px;
   }
 }
