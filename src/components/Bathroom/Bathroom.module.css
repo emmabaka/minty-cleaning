@@ -65,12 +65,26 @@
   right: 95px;
 }
 @media (min-width: 720px) {
+  .title {
+    font-size: 22px;
+    padding-bottom: 35px;
+  }
   .svg {
     width: 321px;
     height: 278px;
   }
+  .svgWrap {
+    max-width: 321px;
+  }
 }
 @media (min-width: 1340px) {
+  .title {
+    font-size: 24px;
+    padding-bottom: 60px;
+  }
+  .svgWrap {
+    max-width: 371px;
+  }
   .svg {
     width: 371px;
     height: 327px;
@@ -81,21 +95,19 @@
   }
   .sinkDetails {
     top: 175px;
-    right: 40px;
+    right: 105px;
     padding: 12px 33px 12px 12px;
     max-width: 156px;
   }
-
   .bathDetails {
     top: 112px;
-    right: 50px;
+    right: 120px;
     padding: 12px 33px 12px 12px;
     max-width: 140px;
   }
-
   .shelfDetails {
-    top: 140px;
-    right: 65px;
+    top: 135px;
+    right: 135px;
     padding: 12px 32px 12px 12px;
     max-width: 150px;
   }

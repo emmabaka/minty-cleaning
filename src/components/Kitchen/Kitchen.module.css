@@ -68,13 +68,27 @@
   max-width: 125px;
 }
 @media (min-width: 720px) {
+  .title {
+    font-size: 22px;
+    padding-bottom: 35px;
+  }
   .svg {
     width: 277px;
     height: 273px;
   }
+  .svgWrap {
+    max-width: 277px;
+  }
 }
 
 @media (min-width: 1340px) {
+  .title {
+    font-size: 24px;
+    padding-bottom: 60px;
+  }
+  .svgWrap {
+    max-width: 334px;
+  }
   .svg {
     width: 334px;
     height: 327px;
@@ -94,12 +108,12 @@
     min-width: 162px;
   }
   .wardrobeDetails {
-    top: 145px;
-    right: 15px;
+    top: 143px;
+    right: 75px;
   }
   .shelfDetails {
     top: 125px;
-    right: -1px;
+    right: 60px;
     max-width: 146px;
   }
 }

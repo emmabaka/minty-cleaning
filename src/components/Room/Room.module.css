@@ -76,16 +76,30 @@
   max-width: 106px;
 }
 @media (min-width: 720px) {
+  .title {
+    font-size: 22px;
+    padding-bottom: 35px;
+  }
   .svg {
     width: 300px;
     height: 280px;
   }
+  .svgWrap {
+    max-width: 300px;
+  }
 }
 @media (min-width: 1340px) {
+  .title {
+    font-size: 24px;
+    padding-bottom: 60px;
+  }
   .details {
     font-size: 11px;
     min-width: 140px;
     line-height: 1.2;
+  }
+  .svgWrap {
+    max-width: 360px;
   }
   .svg {
     width: 360px;
@@ -96,30 +110,30 @@
     height: 7px;
   }
   .sofaDetails {
-    top: 110px;
-    right: -35px;
+    top: 108px;
+    right: 30px;
     padding: 12px 15px 12px 12px;
   }
   .tvDetails {
     padding: 12px 34px 12px 12px;
     min-width: 120px;
     top: 125px;
-    right: 90px;
+    right: 155px;
   }
   .deskDetails {
     top: 148px;
-    right: 85px;
+    right: 150px;
     padding: 12px 30px 12px 12px;
   }
   .windowDetails {
     padding: 12px 15px 12px 12px;
     min-width: 148px;
     top: 100px;
-    right: -5px;
+    right: 60px;
   }
   .carpetDetails {
     top: 110px;
-    right: -25px;
+    right: 40px;
     padding: 12px 15px 12px 12px;
     min-width: 151px;
   }
