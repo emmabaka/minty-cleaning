@@ -20,6 +20,10 @@
     cursor: pointer;
   }
 }
+.svg {
+  width: 274px;
+  height: 268px;
+}
 .details {
   display: none;
   position: absolute;
@@ -63,6 +67,39 @@
   padding: 12px 29px 12px 12px;
   max-width: 125px;
 }
-@media (min-width: 720px){
-    
+@media (min-width: 720px) {
+  .svg {
+    width: 277px;
+    height: 273px;
+  }
+}
+
+@media (min-width: 1340px) {
+  .svg {
+    width: 334px;
+    height: 327px;
+  }
+  .details {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+  .details::after {
+    width: 7px;
+    height: 7px;
+  }
+  .itemsDetails {
+    top: 160px;
+    left: 120px;
+    padding: 12px 25px 12px 12px;
+    min-width: 162px;
+  }
+  .wardrobeDetails {
+    top: 145px;
+    right: 15px;
+  }
+  .shelfDetails {
+    top: 125px;
+    right: -1px;
+    max-width: 146px;
+  }
 }
