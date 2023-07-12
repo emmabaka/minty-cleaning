@@ -16,21 +16,21 @@ const Footer = () => {
           </div>
           <ul className={css.linksList}>
             <li className={css.item}>
-              <a className={css.link} href="#">
+              <a className={css.link} href="#advantages">
                 Чому ми
               </a>
-              <a className={css.link} href="#">
+              <a className={css.link} href="#services">
                 Наші послуги
               </a>
-              <a className={css.link} href="#">
+              <a className={css.link} href="#howWeWork">
                 Як ми працюємо
               </a>
             </li>
             <li className={css.item}>
-              <a className={css.link} href="#">
+              <a className={css.link} href="#workInclude">
                 У роботу входить
               </a>
-              <a className={css.link} href="#">
+              <a className={css.link} href="#equipment">
                 Обладнання
               </a>
               <a className={css.link} href="#">
