@@ -7,7 +7,7 @@ import css from "./Advantages.module.css";
 
 const Advantages = () => {
   return (
-    <section className={css.advantages}>
+    <section id="advantages" className={css.advantages}>
       <div className="container">
         <h2 className={css.title}>Чому ми?</h2>
         <ul className={css.listWrapper}>

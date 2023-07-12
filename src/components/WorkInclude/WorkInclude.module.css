@@ -7,12 +7,20 @@
   padding-bottom: 30px;
 }
 @media (min-width: 720px) {
+  .workInclude {
+    padding-top: 45px;
+    padding-bottom: 30px;
+  }
   .title {
     font-size: 24px;
     padding-bottom: 40px;
   }
 }
 @media (min-width: 1340px) {
+  .workInclude {
+    padding-top: 55px;
+    padding-bottom: 140px;
+  }
   .title {
     font-size: 30px;
     padding-bottom: 55px;

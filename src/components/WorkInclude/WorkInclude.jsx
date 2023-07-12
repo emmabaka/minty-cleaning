@@ -5,7 +5,7 @@ import css from "./WorkInclude.module.css";
 
 const WorkInclude = () => {
   return (
-    <section>
+    <section id="workInclude" className={css.workInclude}>
       <div className="container">
         <h2 className={css.title}>У роботу входить</h2>
         <div className={css.workIncludeContainer}>

@@ -12,6 +12,7 @@
   color: #263238;
   background-color: #fff;
 
+  scroll-behavior: smooth;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

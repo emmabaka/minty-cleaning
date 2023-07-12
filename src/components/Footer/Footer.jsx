@@ -34,7 +34,7 @@ const Footer = () => {
                 Обладнання
               </a>
               <a className={css.link} href="#">
-                Питання
+                FAQ
               </a>
             </li>
           </ul>

@@ -32,27 +32,27 @@ const Header = () => {
             </a>
             <ul className="menu">
               <li>
-                <a href="#" className="menuLink">
+                <a href="#advantages" className="menuLink">
                   Чому ми
                 </a>
               </li>
               <li>
-                <a href="#" className="menuLink">
+                <a href="#services" className="menuLink">
                   Наші послуги
                 </a>
               </li>
               <li>
-                <a href="#" className="menuLink">
+                <a href="#howWeWork" className="menuLink">
                   Як ми працюємо
                 </a>
               </li>
               <li>
-                <a href="#" className="menuLink">
+                <a href="#workInclude" className="menuLink">
                   У роботу входить
                 </a>
               </li>
               <li>
-                <a href="#" className="menuLink">
+                <a href="#equipment" className="menuLink">
                   Обладнання
                 </a>
               </li>
@@ -74,7 +74,7 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="contactsPhone">
+                <a href="tel:+380679843298" className="contactsPhone">
                   +380 (67) 984 32 98
                 </a>
               </li>

@@ -111,10 +111,25 @@
   align-self: flex-end;
   max-width: 279px;
 }
+@media (min-width: 720px) and (max-width: 1340px) {
+  .questions {
+    padding-bottom: 40px;
+  }
+  .title {
+    font-size: 24px;
+    padding-bottom: 35px;
+  }
+  .dialogWrap {
+    gap: 20px;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+}
+
 @media (min-width: 1340px) {
   .questions {
     position: relative;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
   .questions::before {
     content: "";
@@ -245,19 +260,5 @@
   .dialogItemAccent5 {
     align-self: flex-end;
     max-width: 430px;
-  }
-}
-@media (min-width: 720px) and (max-width: 1340px) {
-  .questions {
-    padding-bottom: 40px;
-  }
-  .title {
-    font-size: 24px;
-    padding-bottom: 35px;
-  }
-  .dialogWrap {
-    gap: 20px;
-    max-width: 580px;
-    margin: 0 auto;
   }
 }

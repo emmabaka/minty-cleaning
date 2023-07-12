@@ -1,4 +1,4 @@
-import "./App.css";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import About from "./components/About/About";
 import Advantages from "./components/Advantages/Advantages";
 import Equipment from "./components/Equipment/Equipment";
@@ -11,8 +11,11 @@ import HowWeWork from "./components/HowWeWork/HowWeWork";
 import Questions from "./components/Questions/Questions";
 import Services from "./components/Services/Services";
 import WorkInclude from "./components/WorkInclude/WorkInclude";
+import "./App.css";
 
 function App() {
+  const isMobile = useMediaQuery("only screen and (max-width : 720px)");
+
   return (
     <>
       <Header />
@@ -22,9 +25,14 @@ function App() {
       <Advantages />
       <Services />
       <ExtraServices />
+      {!isMobile && (
+        <FeedbackForm title={["Легко", "онлайн"]} accent="замовте послугу " />
+      )}
       <HowWeWork />
       <WorkInclude />
-      <FeedbackForm title={["Легко", "онлайн"]} accent="замовте послугу " />
+      {isMobile && (
+        <FeedbackForm title={["Легко", "онлайн"]} accent="замовте послугу " />
+      )}
       <Questions />
       <Equipment />
       <Footer />

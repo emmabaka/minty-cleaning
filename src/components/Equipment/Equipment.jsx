@@ -7,7 +7,7 @@ import css from "./Equipment.module.css";
 
 const Equipment = () => {
   return (
-    <section className={css.equipment}>
+    <section id="equipment" className={css.equipment}>
       <div className="container">
         <h2 className={css.title}>Обладнання</h2>
         <ul className={css.equipmentList}>
