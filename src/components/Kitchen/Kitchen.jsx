@@ -109,7 +109,7 @@ const Kitchen = () => {
   }, [isItemsClick, isShelfClick, isWardrobeClick]);
 
   return (
-    <>
+    <div>
       <h2 className={css.title}>Кухня</h2>
       <div className={css.wrap}>
         <div className={css.svgWrap}>
@@ -2950,7 +2950,7 @@ const Kitchen = () => {
           </svg>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

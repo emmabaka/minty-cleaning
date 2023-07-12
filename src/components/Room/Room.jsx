@@ -246,7 +246,7 @@ const Room = () => {
   }, [isCarpetClick, isDeskClick, isSofaClick, isTvClick, isWindowClick]);
 
   return (
-    <>
+    <div>
       <h2 className={css.title}>Кімната</h2>
       <div className={css.wrap}>
         <div id="room" className={css.svgWrap}>
@@ -2025,7 +2025,7 @@ const Room = () => {
           </svg>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

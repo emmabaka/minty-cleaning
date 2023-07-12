@@ -115,7 +115,7 @@ const Bathroom = () => {
   }, [isBathClick, isShelfClick, isSinkClick]);
 
   return (
-    <>
+    <div>
       <h2 className={css.title}>Ванна кімната</h2>
       <div className={css.wrap}>
         <div className={css.svgWrap}>
@@ -1986,7 +1986,7 @@ const Bathroom = () => {
           </svg>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

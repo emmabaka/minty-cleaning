@@ -8,9 +8,11 @@ const WorkInclude = () => {
     <section>
       <div className="container">
         <h2 className={css.title}>У роботу входить</h2>
-        <Room />
-        <Kitchen />
-        <Bathroom />
+        <div className={css.workIncludeContainer}>
+          <Room />
+          <Kitchen />
+          <Bathroom />
+        </div>
       </div>
     </section>
   );
