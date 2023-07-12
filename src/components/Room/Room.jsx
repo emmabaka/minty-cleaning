@@ -249,7 +249,7 @@ const Room = () => {
     <>
       <h2 className={css.title}>Кімната</h2>
       <div className={css.wrap}>
-        <div className={css.svgWrap}>
+        <div id="room" className={css.svgWrap}>
           <div
             id="sofa-details"
             className={`${css.details} ${css.sofaDetails}`}

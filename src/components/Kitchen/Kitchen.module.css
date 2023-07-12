@@ -79,6 +79,33 @@
   .svgWrap {
     max-width: 277px;
   }
+  .details {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .details::after {
+    top: 10px;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+  }
+  .itemsDetails {
+    top: 135px;
+    left: 100px;
+    min-width: 150px;
+    padding: 12px 18px 12px 12px;
+  }
+  .wardrobeDetails {
+    top: 115px;
+    right: 40px;
+    padding: 12px 16px 12px 12px;
+  }
+  .shelfDetails {
+    top: 105px;
+    right: 43px;
+    max-width: 126px;
+    padding: 12px 21px 12px 12px;
+  }
 }
 
 @media (min-width: 1340px) {
@@ -95,7 +122,6 @@
   }
   .details {
     font-size: 11px;
-    line-height: 1.2;
   }
   .details::after {
     width: 7px;
@@ -105,11 +131,12 @@
     top: 160px;
     left: 120px;
     padding: 12px 25px 12px 12px;
-    min-width: 162px;
+    max-width: 162px;
   }
   .wardrobeDetails {
     top: 143px;
     right: 75px;
+    padding: 12px 18px 12px 12px;
   }
   .shelfDetails {
     top: 125px;
