@@ -42,7 +42,7 @@ const Footer = () => {
         <div className={css.socialLineWrap}>
           <ul className={css.socials}>
             <li>
-              <a href="#">
+              <a href="tel:+380679843298">
                 <img className={css.socialIcons} src={phone} alt="Phone" />
               </a>
             </li>
