@@ -21,7 +21,6 @@
   min-width: 320px;
   padding: 8px 15px;
   color: #263238;
-  -webkit-text-fill-color: #263238;
   font-size: 13px;
   line-height: 18px;
   border-radius: 5px;
@@ -34,11 +33,13 @@
   background-position: right 18px center;
   cursor: pointer;
 }
+
 option {
   color: #263238;
   font-size: 13px;
   line-height: 18px;
 }
+
 .inputWrap {
   display: flex;
   gap: 5px;
@@ -55,6 +56,12 @@ option {
   background-color: #f9f9f9;
   outline: none;
 }
+
+.nameInput::placeholder,
+.phoneInput::placeholder {
+  color: #263238;
+}
+
 .submitBtn {
   margin: 0 auto;
   padding-top: 7px;

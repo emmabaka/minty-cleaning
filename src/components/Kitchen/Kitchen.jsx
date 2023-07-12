@@ -2884,15 +2884,16 @@ const Kitchen = () => {
                 pointerEvents="all"
                 fill="transparent"
               />
+
+              <circle
+                id="wardrobe-button"
+                cx="58.5"
+                cy="183.5"
+                r="5"
+                fill="white"
+                stroke="#407BFF"
+              />
             </g>
-            <circle
-              id="wardrobe-button"
-              cx="58.5"
-              cy="183.5"
-              r="5"
-              fill="white"
-              stroke="#407BFF"
-            />
             <g
               id="click-area"
               onClick={() => {
