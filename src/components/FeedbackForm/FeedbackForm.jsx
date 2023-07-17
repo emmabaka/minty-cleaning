@@ -1,16 +1,45 @@
 import css from "./FeedbackForm.module.css";
 import FeedbackTitle from "./FeedbackTitle";
-const API_URL = import.meta.env.VITE_API_URL;
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+
 const FeedbackForm = ({ title, accent }) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      category: e.target.elements.service.value,
+      name: e.target.elements.name.value,
+      mobile: e.target.elements.mobile.value,
+    };
+
+    console.log(data);
+    console.log(JSON.stringify(data));
+    const res = await fetch(
+      "https://minty-back.onrender.com/api/v1/mail-send",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    console.log(res);
+    if (res.ok) {
+      Notify.success("Message sent successfully!");
+    } else {
+      Notify.failure("Error. Try again, please");
+    }
+  };
+
   return (
     <section className={css.feedback}>
       <div className={`${css.feedbackContainer} container`}>
         <FeedbackTitle title={title} accent={accent} />
         <form
           className={css.form}
-          method="post"
-          action={`${API_URL}/send-mail`}
+          onSubmit={handleSubmit}
         >
           <select
             className={css.select}
@@ -30,11 +59,12 @@ const FeedbackForm = ({ title, accent }) => {
               type="text"
               name="name"
               placeholder="Ім'я"
+              pattern="/^[A-Za-z]+$/"
             />
             <input
               className={css.phoneInput}
               type="text"
-              name="phone"
+              name="mobile"
               placeholder="Номер телефону"
             />
           </div>
@@ -47,9 +77,9 @@ const FeedbackForm = ({ title, accent }) => {
   );
 };
 
-FeedbackForm.propTypes ={
+FeedbackForm.propTypes = {
   title: PropTypes.array.isRequired,
-  accent: PropTypes.string.isRequired
-}
+  accent: PropTypes.string.isRequired,
+};
 
 export default FeedbackForm;
