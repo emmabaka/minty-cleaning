@@ -87,7 +87,40 @@ const Header = () => {
                 </a>
               </li>
             </ul>
-            <div className={popupClass} id="popup"></div>
+            <div className={popupClass} id="popup">
+              <ul className="popupList">
+                <li>
+                  <a href="#advantages" className="popupLink">
+                    Чому ми
+                  </a>
+                </li>
+                <li>
+                  <a href="#services" className="popupLink">
+                    Наші послуги
+                  </a>
+                </li>
+                <li>
+                  <a href="#howWeWork" className="popupLink">
+                    Як ми працюємо
+                  </a>
+                </li>
+                <li>
+                  <a href="#workInclude" className="popupLink">
+                    У роботу входить
+                  </a>
+                </li>
+                <li>
+                  <a href="#equipment" className="popupLink">
+                    Обладнання
+                  </a>
+                </li>
+                <li>
+                  <a href="#questions" className="popupLink">
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </div>
             <div className="hamb" onClick={hambHandler}>
               <div className={hambClass} id="hamb">
                 <span className="bar"></span>
