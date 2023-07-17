@@ -2,7 +2,7 @@ import css from "./Questions.module.css";
 
 const Questions = () => {
   return (
-    <section className={css.questions}>
+    <section id="questions" className={css.questions}>
      <div className={css.wrapper}> <div className="container">
         <h2 className={css.title}>Поширені запитання</h2>
 

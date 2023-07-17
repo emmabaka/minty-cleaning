@@ -33,7 +33,7 @@ const Footer = () => {
               <a className={css.link} href="#equipment">
                 Обладнання
               </a>
-              <a className={css.link} href="#">
+              <a className={css.link} href="#questions">
                 FAQ
               </a>
             </li>
@@ -47,7 +47,11 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                href="https://instagram.com/minty_cleaning?igshid=OGIzYTJhMTRmYQ=="
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   className={css.socialIcons}
                   src={instagram}
@@ -56,7 +60,11 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                href="https://t.me/minty_clean"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   className={css.socialIcons}
                   src={telegram}

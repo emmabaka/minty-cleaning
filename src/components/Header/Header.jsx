@@ -57,19 +57,27 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="menuLink">
+                <a href="#questions" className="menuLink">
                   FAQ
                 </a>
               </li>
             </ul>
             <ul className="contacts">
               <li>
-                <a href="#">
+                <a
+                  href="https://instagram.com/minty_cleaning?igshid=OGIzYTJhMTRmYQ=="
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img src={instagram} alt="Instagram" width="21" height="21" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a
+                  href="https://t.me/minty_clean"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img src={telegram} alt="Telegram" width="21" height="21" />
                 </a>
               </li>

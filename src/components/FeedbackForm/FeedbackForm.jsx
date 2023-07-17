@@ -37,10 +37,7 @@ const FeedbackForm = ({ title, accent }) => {
     <section className={css.feedback}>
       <div className={`${css.feedbackContainer} container`}>
         <FeedbackTitle title={title} accent={accent} />
-        <form
-          className={css.form}
-          onSubmit={handleSubmit}
-        >
+        <form className={css.form} onSubmit={handleSubmit}>
           <select
             className={css.select}
             name="service"
@@ -50,8 +47,10 @@ const FeedbackForm = ({ title, accent }) => {
             <option value="Default" disabled>
               Обрати послугу
             </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
+            <option value="1">Генеральне прибирання</option>
+            <option value="2">Регулярне прибирання</option>
+            <option value="2">Прибирання офісів</option>
+            <option value="2">Прибирання після ремонту</option>
           </select>
           <div className={css.inputWrap}>
             <input
