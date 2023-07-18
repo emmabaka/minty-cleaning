@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container">
         <nav className="navbar">
           <div className="navbarWrap">
-            <a href="#" className="logoWrap">
+            <a href="/" className="logoWrap">
               <img src={logo} alt="Logo" />
               <span className="logo">Minty</span>
             </a>
@@ -90,32 +90,80 @@ const Header = () => {
             <div className={popupClass} id="popup">
               <ul className="popupList">
                 <li>
-                  <a href="#advantages" className="popupLink">
+                  <a
+                    href="#advantages"
+                    className="popupLink"
+                    onClick={() => {
+                      setPopupClass("popup");
+                      setHambClass("hambField");
+                      setClicked(!isClicked);
+                    }}
+                  >
                     Чому ми
                   </a>
                 </li>
                 <li>
-                  <a href="#services" className="popupLink">
+                  <a
+                    href="#services"
+                    className="popupLink"
+                    onClick={() => {
+                      setPopupClass("popup");
+                      setHambClass("hambField");
+                      setClicked(!isClicked);
+                    }}
+                  >
                     Наші послуги
                   </a>
                 </li>
                 <li>
-                  <a href="#howWeWork" className="popupLink">
+                  <a
+                    href="#howWeWork"
+                    className="popupLink"
+                    onClick={() => {
+                      setPopupClass("popup");
+                      setHambClass("hambField");
+                      setClicked(!isClicked);
+                    }}
+                  >
                     Як ми працюємо
                   </a>
                 </li>
                 <li>
-                  <a href="#workInclude" className="popupLink">
+                  <a
+                    href="#workInclude"
+                    className="popupLink"
+                    onClick={() => {
+                      setPopupClass("popup");
+                      setHambClass("hambField");
+                      setClicked(!isClicked);
+                    }}
+                  >
                     У роботу входить
                   </a>
                 </li>
                 <li>
-                  <a href="#equipment" className="popupLink">
+                  <a
+                    href="#equipment"
+                    className="popupLink"
+                    onClick={() => {
+                      setPopupClass("popup");
+                      setHambClass("hambField");
+                      setClicked(!isClicked);
+                    }}
+                  >
                     Обладнання
                   </a>
                 </li>
                 <li>
-                  <a href="#questions" className="popupLink">
+                  <a
+                    href="#questions"
+                    className="popupLink"
+                    onClick={() => {
+                      setPopupClass("popup");
+                      setHambClass("hambField");
+                      setClicked(!isClicked);
+                    }}
+                  >
                     FAQ
                   </a>
                 </li>

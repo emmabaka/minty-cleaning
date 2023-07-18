@@ -56,7 +56,11 @@ option {
   background-color: #f9f9f9;
   outline: none;
 }
-
+.nameInput:-webkit-autofill,
+.phoneInput:-webkit-autofill {
+  background-color: #f9f9f9;
+  color: #263238;
+}
 .nameInput::placeholder,
 .phoneInput::placeholder {
   color: #263238;
@@ -81,6 +85,10 @@ option {
   background-color: #3d71e2;
   border: 1px solid #3d71e2;
   transition: ease 250ms;
+}
+.error {
+  transition: ease 250ms;
+  border: 1px solid red;
 }
 @media (min-width: 720px) and (max-width: 1340px) {
   .feedback {
