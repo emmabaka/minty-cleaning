@@ -110,6 +110,17 @@ header {
     background-image: url("../../assets/footer-line.svg");
     background-size: cover;
   }
+  .popup::before {
+    content: "";
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-45%);
+    width: 245px;
+    height: 200.972px;
+    background-image: url("../../assets/mobile-menu.svg");
+    background-size: cover;
+  }
   .hambField.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -133,6 +144,16 @@ header {
     line-height: 18px;
   }
 }
+@media (max-height: 580px) {
+  .popupList {
+    gap: 25px;
+  }
+}
+@media (max-height: 790px) {
+  .popup::before {
+    display: none;
+  }
+}
 @media (min-width: 720px) {
   .logo {
     font-size: 18px;
@@ -143,6 +164,30 @@ header {
   .logoWrap img {
     width: 55px;
     height: 43px;
+  }
+  .popupLink {
+    font-size: 22px;
+  }
+  .popup::before {
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-45%);
+    width: 368px;
+    height: 305px;
+  }
+  .popup::after {
+    top: 48px;
+    left: 53px;
+    width: 170px;
+    height: 34px;
+  }
+  .popupList {
+    padding-top: 150px;
+  }
+}
+@media (min-width: 720px) and (max-height: 930px) {
+  .popup::before {
+    display: none;
   }
 }
 @media (min-width: 1340px) {

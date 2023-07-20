@@ -3,13 +3,14 @@ import FeedbackTitle from "./FeedbackTitle";
 import PropTypes from "prop-types";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { useState } from "react";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const phoneNumberPattern = /^(\+?380|0)\d{9}$/;
 
 const FeedbackForm = ({ title, accent }) => {
   const [mobileError, setMobileError] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [categoryError, setCategoryError] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,6 +46,7 @@ const FeedbackForm = ({ title, accent }) => {
       setCategoryError(false);
       setNameError(false);
       setMobileError(false);
+      setDisable(true);
 
       const data = {
         category,
@@ -52,21 +54,20 @@ const FeedbackForm = ({ title, accent }) => {
         mobile,
       };
 
-      const res = await fetch(
-        "https://minty-back.onrender.com/api/v1/mail-send",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const res = await fetch(`${API_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
       if (res.ok) {
         Notify.success("Дякуєм! Незабаром з вами зв'яжуться");
-        console.log("ok");
+        setDisable(false);
       } else {
         Notify.failure("Упс, щось пішло не так. Спробуйте ще раз.");
+        setDisable(false);
       }
     }
   };
@@ -112,9 +113,19 @@ const FeedbackForm = ({ title, accent }) => {
               placeholder="Номер телефону"
             />
           </div>
-          <button className={css.submitBtn} type="submit">
-            Замовити
-          </button>
+          {disable ? (
+            <button
+              className={`${css.submitBtn} ${css.disable}`}
+              type="submit"
+              disabled
+            >
+              Замовити
+            </button>
+          ) : (
+            <button className={css.submitBtn} type="submit">
+              Замовити
+            </button>
+          )}
         </form>
       </div>
     </section>

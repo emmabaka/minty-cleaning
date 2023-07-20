@@ -3,12 +3,23 @@ import telegram from "../../assets/telegram.svg";
 import instagram from "../../assets/instagram.svg";
 import "./Header.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [hambClass, setHambClass] = useState("hambField");
   const [popupClass, setPopupClass] = useState("popup");
   const [isClicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    if (isClicked) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+    return () => {
+      document.body.classList.remove("menu-open");
+    };
+  }, [isClicked]);
 
   const hambHandler = () => {
     if (!isClicked) {

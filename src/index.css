@@ -61,3 +61,6 @@ a {
 .accent {
   color: #407bff;
 }
+body.menu-open {
+  overflow: hidden;
+}

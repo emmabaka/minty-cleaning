@@ -28,7 +28,7 @@
   background-color: #f9f9f9;
   outline: none;
   appearance: none;
-  background-image: url("../../assets/arrow-down.svg");
+  background-image: url("../../assets/down-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
   cursor: pointer;
@@ -82,8 +82,14 @@ option {
   cursor: pointer;
 }
 .submitBtn:hover {
-  background-color: #3d71e2;
+  background-color: #fff;
   border: 1px solid #3d71e2;
+  color: #3d71e2;
+  transition: ease 250ms;
+}
+.disable {
+  background-color: #b9b9b9;
+  border-color: #b9b9b9;
   transition: ease 250ms;
 }
 .error {
