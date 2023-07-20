@@ -1,3 +1,4 @@
+import { scroll } from "../../utils/scroll";
 import logo from "../../assets/logo-footer.png";
 import phone from "../../assets/footer-phone.png";
 import instagram from "../../assets/footer-instagram.png";
@@ -16,24 +17,48 @@ const Footer = () => {
           </div>
           <ul className={css.linksList}>
             <li className={css.item}>
-              <a className={css.link} href="#advantages">
+              <a
+                className={css.link}
+                href="#advantages"
+                onClick={(e) => scroll(e, "advantages")}
+              >
                 Чому ми
               </a>
-              <a className={css.link} href="#services">
+              <a
+                className={css.link}
+                href="#services"
+                onClick={(e) => scroll(e, "services")}
+              >
                 Наші послуги
               </a>
-              <a className={css.link} href="#howWeWork">
+              <a
+                className={css.link}
+                href="#howWeWork"
+                onClick={(e) => scroll(e, "howWeWork")}
+              >
                 Як ми працюємо
               </a>
             </li>
             <li className={css.item}>
-              <a className={css.link} href="#workInclude">
+              <a
+                className={css.link}
+                href="#workInclude"
+                onClick={(e) => scroll(e, "workInclude")}
+              >
                 У роботу входить
               </a>
-              <a className={css.link} href="#equipment">
+              <a
+                className={css.link}
+                href="#equipment"
+                onClick={(e) => scroll(e, "equipment")}
+              >
                 Обладнання
               </a>
-              <a className={css.link} href="#questions">
+              <a
+                className={css.link}
+                href="#questions"
+                onClick={(e) => scroll(e, "questions")}
+              >
                 FAQ
               </a>
             </li>
