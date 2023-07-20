@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
+import { scroll } from "../../utils/scroll";
 import logo from "../../assets/logo-header.png";
 import telegram from "../../assets/telegram.svg";
 import instagram from "../../assets/instagram.svg";
 import "./Header.css";
-
-import { useEffect, useState } from "react";
 
 const Header = () => {
   const [hambClass, setHambClass] = useState("hambField");
@@ -43,32 +43,56 @@ const Header = () => {
             </a>
             <ul className="menu">
               <li>
-                <a href="#advantages" className="menuLink">
+                <a
+                  href="#advantages"
+                  className="menuLink"
+                  onClick={(e) => scroll(e, "advantages")}
+                >
                   Чому ми
                 </a>
               </li>
               <li>
-                <a href="#services" className="menuLink">
+                <a
+                  href="#services"
+                  className="menuLink"
+                  onClick={(e) => scroll(e, "services")}
+                >
                   Наші послуги
                 </a>
               </li>
               <li>
-                <a href="#howWeWork" className="menuLink">
+                <a
+                  href="#howWeWork"
+                  className="menuLink"
+                  onClick={(e) => scroll(e, "howWeWork")}
+                >
                   Як ми працюємо
                 </a>
               </li>
               <li>
-                <a href="#workInclude" className="menuLink">
+                <a
+                  href="#workInclude"
+                  className="menuLink"
+                  onClick={(e) => scroll(e, "workInclude")}
+                >
                   У роботу входить
                 </a>
               </li>
               <li>
-                <a href="#equipment" className="menuLink">
+                <a
+                  href="#equipment"
+                  className="menuLink"
+                  onClick={(e) => scroll(e, "equipment")}
+                >
                   Обладнання
                 </a>
               </li>
               <li>
-                <a href="#questions" className="menuLink">
+                <a
+                  href="#questions"
+                  className="menuLink"
+                  onClick={(e) => scroll(e, "questions")}
+                >
                   FAQ
                 </a>
               </li>
@@ -104,10 +128,12 @@ const Header = () => {
                   <a
                     href="#advantages"
                     className="popupLink"
-                    onClick={() => {
+                    onClick={(e) => {
                       setPopupClass("popup");
                       setHambClass("hambField");
                       setClicked(!isClicked);
+
+                      scroll(e, "advantages");
                     }}
                   >
                     Чому ми
@@ -117,10 +143,11 @@ const Header = () => {
                   <a
                     href="#services"
                     className="popupLink"
-                    onClick={() => {
+                    onClick={(e) => {
                       setPopupClass("popup");
                       setHambClass("hambField");
                       setClicked(!isClicked);
+                      scroll(e, "services");
                     }}
                   >
                     Наші послуги
@@ -130,10 +157,11 @@ const Header = () => {
                   <a
                     href="#howWeWork"
                     className="popupLink"
-                    onClick={() => {
+                    onClick={(e) => {
                       setPopupClass("popup");
                       setHambClass("hambField");
                       setClicked(!isClicked);
+                      scroll(e, "howWeWork");
                     }}
                   >
                     Як ми працюємо
@@ -143,10 +171,11 @@ const Header = () => {
                   <a
                     href="#workInclude"
                     className="popupLink"
-                    onClick={() => {
+                    onClick={(e) => {
                       setPopupClass("popup");
                       setHambClass("hambField");
                       setClicked(!isClicked);
+                      scroll(e, "workInclude");
                     }}
                   >
                     У роботу входить
@@ -156,10 +185,11 @@ const Header = () => {
                   <a
                     href="#equipment"
                     className="popupLink"
-                    onClick={() => {
+                    onClick={(e) => {
                       setPopupClass("popup");
                       setHambClass("hambField");
                       setClicked(!isClicked);
+                      scroll(e, "equipment");
                     }}
                   >
                     Обладнання
@@ -169,10 +199,11 @@ const Header = () => {
                   <a
                     href="#questions"
                     className="popupLink"
-                    onClick={() => {
+                    onClick={(e) => {
                       setPopupClass("popup");
                       setHambClass("hambField");
                       setClicked(!isClicked);
+                      scroll(e, "questions");
                     }}
                   >
                     FAQ
