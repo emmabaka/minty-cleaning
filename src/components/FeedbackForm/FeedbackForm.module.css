@@ -31,6 +31,7 @@
   background-image: url("../../assets/down-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
+  background-size: 12px;
   cursor: pointer;
 }
 
@@ -121,6 +122,9 @@ option {
   .select {
     font-size: 14px;
   }
+  .select {
+    background-size: 15px;
+  }
   .submitBtn {
     font-size: 15px;
     padding: 11px 15px;
@@ -148,6 +152,9 @@ option {
   .select {
     padding: 14px 18px;
     font-size: 16px;
+  }
+  .select {
+    background-size: 20px;
   }
   .feedbackContainer {
     display: flex;

@@ -11,7 +11,6 @@ import HowWeWork from "./components/HowWeWork/HowWeWork";
 import Questions from "./components/Questions/Questions";
 import Services from "./components/Services/Services";
 import WorkInclude from "./components/WorkInclude/WorkInclude";
-import "./App.css";
 
 function App() {
   const isMobile = useMediaQuery("only screen and (max-width : 720px)");

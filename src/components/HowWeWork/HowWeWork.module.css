@@ -16,7 +16,6 @@
   padding-right: 32%;
   padding-left: 30%;
 }
-
 .howWeWork img {
   width: 1676px;
   height: 134px;
@@ -25,11 +24,9 @@
 .wrap::-webkit-scrollbar {
   width: 0.5em; /* Ширина лінії прокрутки */
 }
-
 .wrap::-webkit-scrollbar-track {
   background-color: transparent; /* Фон трека */
 }
-
 .wrap::-webkit-scrollbar-thumb {
   background-color: transparent; /* Колір лінії прокрутки */
 }
