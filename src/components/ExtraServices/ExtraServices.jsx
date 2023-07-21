@@ -4,7 +4,9 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import css from "./ExtraServices.module.css";
 
 const ExtraServices = () => {
+  
   const isDesktop = useMediaQuery("only screen and (min-width : 1340px)");
+
   return (
     <section className={css.extraServices}>
       <div className="container">

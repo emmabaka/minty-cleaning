@@ -96,6 +96,12 @@ option {
   transition: ease 250ms;
   border: 1px solid red;
 }
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 41px;
+}
 @media (min-width: 720px) and (max-width: 1340px) {
   .feedback {
     padding-top: 20px;
@@ -153,5 +159,9 @@ option {
     margin-left: 15px;
     font-size: 16px;
     border-radius: 12px;
+  }
+  .loader {
+    padding: 0 45px;
+    height: 50px;
   }
 }

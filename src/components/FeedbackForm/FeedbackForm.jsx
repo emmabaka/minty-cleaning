@@ -1,16 +1,18 @@
-import css from "./FeedbackForm.module.css";
-import FeedbackTitle from "./FeedbackTitle";
-import PropTypes from "prop-types";
-import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { useState } from "react";
-const API_URL = import.meta.env.VITE_API_URL;
+import { postData } from "../../api/postData";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+import PropTypes from "prop-types";
+import FeedbackTitle from "./FeedbackTitle";
+import { ThreeDots } from "react-loader-spinner";
+import css from "./FeedbackForm.module.css";
+
 const phoneNumberPattern = /^(\+?380|0)\d{9}$/;
 
 const FeedbackForm = ({ title, accent }) => {
   const [mobileError, setMobileError] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [categoryError, setCategoryError] = useState(false);
-  const [disable, setDisable] = useState(false);
+  const [load, setLoad] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +48,7 @@ const FeedbackForm = ({ title, accent }) => {
       setCategoryError(false);
       setNameError(false);
       setMobileError(false);
-      setDisable(true);
+      setLoad(true);
 
       const data = {
         category,
@@ -54,20 +56,18 @@ const FeedbackForm = ({ title, accent }) => {
         mobile,
       };
 
-      const res = await fetch(`${API_URL}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await postData(data);
 
+      console.log(res);
       if (res.ok) {
         Notify.success("Дякуєм! Незабаром з вами зв'яжуться");
-        setDisable(false);
+        e.target.elements.service.value = "Default";
+        e.target.elements.name.value = "";
+        e.target.elements.mobile.value = "";
+        setLoad(false);
       } else {
         Notify.failure("Упс, щось пішло не так. Спробуйте ще раз.");
-        setDisable(false);
+        setLoad(false);
       }
     }
   };
@@ -113,14 +113,17 @@ const FeedbackForm = ({ title, accent }) => {
               placeholder="Номер телефону"
             />
           </div>
-          {disable ? (
-            <button
-              className={`${css.submitBtn} ${css.disable}`}
-              type="submit"
-              disabled
-            >
-              Замовити
-            </button>
+          {load ? (
+            <div className={css.loader}>
+              <ThreeDots
+                height="50"
+                width="60"
+                radius="9"
+                color="#407bff"
+                ariaLabel="three-dots-loading"
+                visible={true}
+              />
+            </div>
           ) : (
             <button className={css.submitBtn} type="submit">
               Замовити

@@ -1,8 +1,8 @@
-import vacuumCleaner from "../../assets/vacuum-cleaner.png";
-import steamCleaner from "../../assets/steam-cleaner.png";
-import windshieldWiper from "../../assets/windshield-wiper.png";
-import bottle1 from "../../assets/bottle1.png";
-import bottle2 from "../../assets/bottle2.png";
+import vacuumCleaner from "../../assets/equipments/vacuum-cleaner.png";
+import steamCleaner from "../../assets/equipments/steam-cleaner.png";
+import windshieldWiper from "../../assets/equipments/windshield-wiper.png";
+import bottle1 from "../../assets/equipments/bottle1.png";
+import bottle2 from "../../assets/equipments/bottle2.png";
 import css from "./Equipment.module.css";
 
 const Equipment = () => {
