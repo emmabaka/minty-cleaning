@@ -4,7 +4,6 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import css from "./ExtraServices.module.css";
 
 const ExtraServices = () => {
-  
   const isDesktop = useMediaQuery("only screen and (min-width : 1340px)");
 
   return (
@@ -28,15 +27,15 @@ const ExtraServices = () => {
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Сезонна</span>
-              <span className={css.servicePrice}>від 35 грн/м2</span>
+              <span className={css.servicePrice}>від 45 грн/м2</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Ген. прибирання</span>
-              <span className={css.servicePrice}>від 40 грн/м2</span>
+              <span className={css.servicePrice}>від 50 грн/м2</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Після ремонту</span>
-              <span className={css.servicePrice}>від 45 грн/м2</span>
+              <span className={css.servicePrice}>від 55 грн/м2</span>
             </li>
           </ul>
           <ul className={css.table}>
@@ -45,15 +44,15 @@ const ExtraServices = () => {
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Піч</span>
-              <span className={css.servicePrice}>від 250 грн</span>
+              <span className={css.servicePrice}>від 350 грн</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Мікрохвильова піч</span>
-              <span className={css.servicePrice}>від 100 грн</span>
+              <span className={css.servicePrice}>від 200 грн</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Холодильник (всередині)</span>
-              <span className={css.servicePrice}>від 250 грн</span>
+              <span className={css.servicePrice}>від 350 грн</span>
             </li>
           </ul>
           <ul className={css.table}>
@@ -74,7 +73,7 @@ const ExtraServices = () => {
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Чищення килимів</span>
-              <span className={css.servicePrice}>від 30/м2 грн</span>
+              <span className={css.servicePrice}>від 40/м2 грн</span>
             </li>
           </ul>
           {!isDesktop && (
@@ -84,11 +83,11 @@ const ExtraServices = () => {
               </li>
               <li className={css.tableItem}>
                 <span className={css.serviceName}>Балкон</span>
-                <span className={css.servicePrice}>від 150 грн</span>
+                <span className={css.servicePrice}>від 200 грн</span>
               </li>
               <li className={css.tableItem}>
                 <span className={css.serviceName}>Комора</span>
-                <span className={css.servicePrice}>від 150 грн</span>
+                <span className={css.servicePrice}>від 200 грн</span>
               </li>
             </ul>
           )}

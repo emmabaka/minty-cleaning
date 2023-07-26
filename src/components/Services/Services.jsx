@@ -33,11 +33,11 @@ const Services = () => {
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>1 кімнатна квартира</span>
-              <span className={css.servicePrice}>від 35 грн/м2</span>
+              <span className={css.servicePrice}>від 45 грн/м2</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>2 кімнатна квартира</span>
-              <span className={css.servicePrice}>від 35 грн/м2</span>
+              <span className={css.servicePrice}>від 45 грн/м2</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>3 кімнатна квартира</span>
@@ -45,7 +45,7 @@ const Services = () => {
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Будинок</span>
-              <span className={css.servicePrice}>від 40 грн/м2</span>
+              <span className={css.servicePrice}>від 50 грн/м2</span>
             </li>
           </ul>
           <ul className={`${css.table} ${css.office}`}>
@@ -54,15 +54,15 @@ const Services = () => {
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>До 50 м2</span>
-              <span className={css.servicePrice}>від 25 грн/м2</span>
+              <span className={css.servicePrice}>від 45 грн/м2</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>До 60 м2</span>
-              <span className={css.servicePrice}>від 23 грн/м2</span>
+              <span className={css.servicePrice}>від 40 грн/м2</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Від 60 м2</span>
-              <span className={css.servicePrice}>від 21 грн/м2</span>
+              <span className={css.servicePrice}>від 35 грн/м2</span>
             </li>
           </ul>
           <ul className={`${css.table} ${css.repair}`}>
@@ -71,19 +71,19 @@ const Services = () => {
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>1 кімнатна квартира</span>
-              <span className={css.servicePrice}>від 2400 грн</span>
+              <span className={css.servicePrice}>від 3000 грн</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>2 кімнатна квартира</span>
-              <span className={css.servicePrice}>від 3000 грн</span>
+              <span className={css.servicePrice}>від 4000 грн</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>3 кімнатна квартира</span>
-              <span className={css.servicePrice}>від 3000 грн</span>
+              <span className={css.servicePrice}>від 4500 грн</span>
             </li>
             <li className={css.tableItem}>
               <span className={css.serviceName}>Будинок</span>
-              <span className={css.servicePrice}>від 80 грн/м2</span>
+              <span className={css.servicePrice}>від 90 грн/м2</span>
             </li>
           </ul>
         </div>
