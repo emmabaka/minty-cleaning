@@ -20,6 +20,7 @@
   width: 1676px;
   height: 134px;
   object-fit: contain;
+  user-select: none;
 }
 .wrap::-webkit-scrollbar {
   width: 0.5em; /* Ширина лінії прокрутки */
